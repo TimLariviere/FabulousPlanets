@@ -1,2 +1,2 @@
 # ElmishPlanets
-F# / Elmish.XamarinForms / UhroSharp
+F# / Elmish.XamarinForms / UrhoSharp
