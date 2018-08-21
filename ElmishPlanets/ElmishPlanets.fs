@@ -7,18 +7,20 @@ open Xamarin.Forms
 open Urho
 
 module App =
-    let mutable _app: HelloWorldUrhoApp = new HelloWorldUrhoApp(null)
+    let mutable _app: HelloWorldUrhoApp option = None
 
     type Model = { ShowSurface: bool }
 
     type Msg = Appearing | Created of HelloWorldUrhoApp | ChangeColor
 
     let setApp app =
-        _app <- app
+        _app <- Some app
         None
 
     let changeTextColor() =
-        _app.ChangeTextColor()
+        match _app with
+        | None -> ()
+        | Some app -> app.ChangeTextColor()
         None
 
     let init () = { ShowSurface = false }, Cmd.none
