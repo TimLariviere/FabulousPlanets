@@ -15,12 +15,21 @@ type HelloWorldUrhoApp(options: ApplicationOptions) =
         text.SetFont(font=resourceCache.GetFont("Fonts/Anonymous Pro.ttf"), size=30.f) |> ignore
         text
 
+    let getTextColor counter =
+        match counter with
+        | 0 -> Color.Cyan
+        | 1 -> Color.Red
+        | 2 -> Color.Yellow
+        | _ -> failwith "No fourth color"
+
     member val Label: Text = null with get, set
+    member val Counter: int = 0 with get, set
 
     override this.Start() =
         base.Start()
-        this.Label <- createText(this.ResourceCache, Color.Cyan)
+        this.Label <- createText(this.ResourceCache, getTextColor this.Counter)
         this.UI.Root.AddChild(this.Label)
 
     member this.ChangeTextColor() =
-        this.Label.SetColor(Color.Red)
+        this.Counter <- (this.Counter + 1) % 3
+        this.Label.SetColor(getTextColor this.Counter)
