@@ -1,5 +1,6 @@
 ﻿namespace ElmishPlanets
 
+open Cmd
 open Elmish.XamarinForms
 open Elmish.XamarinForms.DynamicViews
 open Xamarin.Forms
@@ -12,17 +13,21 @@ module App =
 
     type Msg = Appearing | Created of HelloWorldUrhoApp | ChangeColor
 
+    let setApp app =
+        _app <- app
+        None
+
+    let changeTextColor() =
+        _app.ChangeTextColor()
+        None
+
     let init () = { ShowSurface = false }, Cmd.none
 
     let update (msg: Msg) (model: Model) =
         match msg with
         | Appearing -> { model with ShowSurface = true }, Cmd.none
-        | Created app ->
-            _app <- app
-            model, Cmd.none
-        | ChangeColor ->
-            _app.ChangeTextColor()
-            model, Cmd.none
+        | Created app -> model, Cmd.ofMsgOption (setApp app)
+        | ChangeColor -> model, Cmd.ofMsgOption (changeTextColor())
 
     let view (model: Model) dispatch =
         View.ContentPage(
@@ -34,8 +39,8 @@ module App =
                     | false -> yield View.Label(text = "Loading...", verticalOptions = LayoutOptions.CenterAndExpand)
                     | true -> 
                         yield View.UrhoSurface<HelloWorldUrhoApp>(
-                                    applicationOptions = { AssetsFolder = None },
-                                    applicationCreated = (fun app -> dispatch (Created app)),
+                                    options = { AssetsFolder = None },
+                                    created = (fun app -> dispatch (Created app)),
                                     verticalOptions = LayoutOptions.FillAndExpand)
                         yield View.Button(text = "Change color", command = (fun () -> dispatch ChangeColor))
                 ]

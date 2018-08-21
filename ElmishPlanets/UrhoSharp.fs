@@ -10,19 +10,19 @@ module UrhoSharpExtensions =
             AssetsFolder: string option
         }
 
-    let ApplicationOptionsAttribKey = AttributeKey<_> "UrhoSurface_ApplicationOptions"
-    let ApplicationCreatedAttribKey<'T when 'T :> Urho.Application> = AttributeKey<('T -> unit)> "UrhoSurface_ApplicationCreated"
+    let OptionsAttribKey = AttributeKey<_> "UrhoSurface_Options"
+    let CreatedAttribKey<'T when 'T :> Urho.Application> = AttributeKey<('T -> unit)> "UrhoSurface_Created"
 
     type Elmish.XamarinForms.DynamicViews.View with
-        static member UrhoSurface<'T when 'T :> Urho.Application>(?applicationOptions: UrhoApplicationOptions, ?applicationCreated: ('T -> unit),
+        static member UrhoSurface<'T when 'T :> Urho.Application>(?options: UrhoApplicationOptions, ?created: ('T -> unit),
                                                                   // inherited attributes common to all views
                                                                   ?horizontalOptions, ?verticalOptions, ?margin, ?gestureRecognizers, ?anchorX, ?anchorY, ?backgroundColor,
                                                                   ?heightRequest, ?inputTransparent, ?isEnabled, ?isVisible, ?minimumHeightRequest, ?minimumWidthRequest,
                                                                   ?opacity, ?rotation, ?rotationX, ?rotationY, ?scale, ?style, ?translationX, ?translationY, ?widthRequest,
                                                                   ?resources, ?styles, ?styleSheets, ?classId, ?styleId, ?automationId) =
 
-            let attribCount = match applicationOptions with Some _ -> 1 | None -> 0
-            let attribCount = match applicationCreated with Some _ -> attribCount + 1 | None -> attribCount
+            let attribCount = match options with Some _ -> 1 | None -> 0
+            let attribCount = match created with Some _ -> attribCount + 1 | None -> attribCount
 
             let attribs = 
                 View.BuildView(attribCount, ?horizontalOptions=horizontalOptions, ?verticalOptions=verticalOptions, 
@@ -34,8 +34,8 @@ module UrhoSharpExtensions =
                                ?translationX=translationX, ?translationY=translationY, ?widthRequest=widthRequest, 
                                ?resources=resources, ?styles=styles, ?styleSheets=styleSheets, ?classId=classId, ?styleId=styleId, ?automationId=automationId)
 
-            match applicationOptions with None -> () | Some v -> attribs.Add(ApplicationOptionsAttribKey, v)
-            match applicationCreated with None -> () | Some v -> attribs.Add(ApplicationCreatedAttribKey, v)
+            match options with None -> () | Some v -> attribs.Add(OptionsAttribKey, v)
+            match created with None -> () | Some v -> attribs.Add(CreatedAttribKey, v)
 
             let createApplicationOptions (value: UrhoApplicationOptions) =
                 let assetsFolder =
@@ -49,7 +49,7 @@ module UrhoSharpExtensions =
                 let updateAsync = (async {
                     let applicationOptions = createApplicationOptions v
                     let! application = target.Show<'T>(applicationOptions) |> Async.AwaitTask
-                    match applicationCreated with
+                    match created with
                     | None -> ()
                     | Some func -> func application
                 })
@@ -57,6 +57,6 @@ module UrhoSharpExtensions =
 
             let update (prevOpt: ViewElement voption) (source: ViewElement) (target: UrhoSurface) =
                 View.UpdateView (prevOpt, source, target)
-                source.UpdatePrimitive(prevOpt, target, ApplicationOptionsAttribKey, updateApplicationOptions)
+                source.UpdatePrimitive(prevOpt, target, OptionsAttribKey, updateApplicationOptions)
 
             ViewElement.Create(UrhoSurface, update, attribs)
