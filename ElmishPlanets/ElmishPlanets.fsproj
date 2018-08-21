@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="UrhoSharp.fs" />
+    <Compile Include="HelloWorldUrhoApp.fs" />
     <Compile Include="ElmishPlanets.fs" />
   </ItemGroup>
   <ItemGroup>
