@@ -8,12 +8,28 @@ module UrhoSharpExtensions =
     type UrhoApplicationOptions =
         {
             AssetsFolder: string option
+            Orientation: ApplicationOptions.OrientationType option
+            HighDpi: bool option
         }
+
+    let createApplicationOptions (value: UrhoApplicationOptions) =
+        let assetsFolder = match value.AssetsFolder with None -> null | Some folder -> folder                    
+        let options = new ApplicationOptions(assetsFolder)
+        match value.Orientation with None -> () | Some orientation -> options.Orientation <- orientation
+        match value.HighDpi with None -> () | Some highDpi -> options.HighDpi <- highDpi
+        options
 
     let OptionsAttribKey = AttributeKey<_> "UrhoSurface_Options"
     let CreatedAttribKey<'T when 'T :> Urho.Application> = AttributeKey<('T -> unit)> "UrhoSurface_Created"
 
     type Elmish.XamarinForms.DynamicViews.View with
+        static member UrhoApplicationOptions(?assetsFolder: string, ?orientation: ApplicationOptions.OrientationType, ?highDpi: bool) =
+            {
+                AssetsFolder = assetsFolder
+                Orientation = orientation
+                HighDpi = highDpi
+            }
+
         static member UrhoSurface<'T when 'T :> Urho.Application>(?options: UrhoApplicationOptions, ?created: ('T -> unit),
                                                                   // inherited attributes common to all views
                                                                   ?horizontalOptions, ?verticalOptions, ?margin, ?gestureRecognizers, ?anchorX, ?anchorY, ?backgroundColor,
@@ -37,16 +53,9 @@ module UrhoSharpExtensions =
             match options with None -> () | Some v -> attribs.Add(OptionsAttribKey, v)
             match created with None -> () | Some v -> attribs.Add(CreatedAttribKey, v)
 
-            let createApplicationOptions (value: UrhoApplicationOptions) =
-                let assetsFolder =
-                    match value.AssetsFolder with
-                    | None -> null
-                    | Some folder -> folder
-
-                new ApplicationOptions(assetsFolder)
-
             let updateApplicationOptions (target: UrhoSurface) v =
                 let updateAsync = (async {
+                    do! Async.Sleep 500 // Calling Show() too early results in a bad Viewport for iOS -- Need to rework this
                     let applicationOptions = createApplicationOptions v
                     let! application = target.Show<'T>(applicationOptions) |> Async.AwaitTask
                     match created with

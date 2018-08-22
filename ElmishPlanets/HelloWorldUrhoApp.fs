@@ -27,7 +27,9 @@ module HelloWorldUrhoApp =
     let addCamera (renderer: Renderer) (scene: Scene) =
         let cameraNode = scene.CreateChild(name = "camera")
         let camera = cameraNode.CreateComponent<Camera>()
-        renderer.SetViewport(0u, new Viewport(scene, camera, null))
+        let viewport = new Viewport(scene, camera, null)
+        viewport.SetClearColor(Color.Cyan)
+        renderer.SetViewport(0u, viewport)
         scene
 
     let rotateNodeForever (node: Node) =
