@@ -53,20 +53,6 @@ module App =
                             )
                         ]
                     )
-            
-            //View.StackLayout(
-            //    padding = 20.0,
-            //    children = [
-            //        match model.ShowSurface with
-            //        | false -> yield View.Label(text = "Loading...", verticalOptions = LayoutOptions.CenterAndExpand)
-            //        | true -> 
-            //            yield View.UrhoSurface<HelloWorldUrhoApp>(
-            //                    options = View.UrhoApplicationOptions(),
-            //                    created = (fun app -> dispatch (Created app)),
-            //                    verticalOptions = LayoutOptions.FillAndExpand)
-            //            yield View.Button(text = "Toggle animations", command = (fun () -> dispatch ToggleAnimations))
-            //    ]
-            //)
         )
 
     // Note, this declaration is needed if you enable LiveUpdate
