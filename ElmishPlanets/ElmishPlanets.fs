@@ -41,7 +41,7 @@ module App =
                     View.Grid(
                         children=[
                             View.UrhoSurface<HelloWorldUrhoApp>(
-                                options=View.UrhoApplicationOptions(),
+                                options=View.UrhoApplicationOptions(assetsFolder = "Data"),
                                 created=(fun app -> dispatch (Created app))
                             )
                             

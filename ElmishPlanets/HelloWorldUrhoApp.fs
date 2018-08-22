@@ -12,10 +12,11 @@ module HelloWorldUrhoApp =
     let addPyramid (resourceCache: Urho.Resources.ResourceCache) (scene: Scene) =
         let node = scene.CreateChild()
         node.Position <- Vector3(0.f, 0.f, 3.5f)
-        node.Rotation <- Quaternion(15.f, 0.f, 0.f)
+        node.Rotation <- Quaternion(0.f, 0.f, 23.4f)
         node.SetScale(1.f)
         let modelObject = node.CreateComponent<StaticModel>()
-        modelObject.Model <- resourceCache.GetModel("Models/Pyramid.mdl")
+        modelObject.Model <- CoreAssets.Models.Sphere
+        modelObject.SetMaterial(resourceCache.GetMaterial("Materials/Earth.xml"))
         (scene, node)
 
     let addLight (scene: Scene) =
@@ -28,7 +29,6 @@ module HelloWorldUrhoApp =
         let cameraNode = scene.CreateChild(name = "camera")
         let camera = cameraNode.CreateComponent<Camera>()
         let viewport = new Viewport(scene, camera, null)
-        viewport.SetClearColor(Color.Cyan)
         renderer.SetViewport(0u, viewport)
         scene
 
