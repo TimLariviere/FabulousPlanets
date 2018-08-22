@@ -2,31 +2,42 @@ namespace ElmishPlanets
 
 open Urho
 open Urho.Actions
-open Urho.Gui
 
 module HelloWorldUrhoApp =
-    let create3DObject (resourceCache: Urho.Resources.ResourceCache) =
+    let create3DScene () =
         let scene = new Scene()
         scene.CreateComponent<Octree>() |> ignore
+        scene
 
+    let addPyramid (resourceCache: Urho.Resources.ResourceCache) (scene: Scene) =
         let node = scene.CreateChild()
         node.Position <- Vector3(0.f, 0.f, 3.5f)
         node.Rotation <- Quaternion(15.f, 0.f, 0.f)
         node.SetScale(1.f)
-
-        // Add Pyramid Model
         let modelObject = node.CreateComponent<StaticModel>()
         modelObject.Model <- resourceCache.GetModel("Models/Pyramid.mdl")
+        (scene, node)
 
+    let addLight (scene: Scene) =
         let light = scene.CreateChild(name = "light")
         light.SetDirection(Vector3(0.4f, -0.5f, 0.3f))
-        light.CreateComponent<Light>()|> ignore
+        light.CreateComponent<Light>() |> ignore
+        scene
 
+    let addCamera (renderer: Renderer) (scene: Scene) =
         let cameraNode = scene.CreateChild(name = "camera")
         let camera = cameraNode.CreateComponent<Camera>()
+        renderer.SetViewport(0u, new Viewport(scene, camera, null))
+        scene
 
-        (scene, camera, node)
-
+    let rotateNodeForever (node: Node) =
+        let actions: FiniteTimeAction array = [| new RepeatForever(new RotateBy(1.f, 0.f, 90.f, 0.f)) |]
+        node.RunActionsAsync(actions)
+        |> Async.AwaitTask
+        |> Async.Ignore
+        |> Async.StartImmediate
+        
+open HelloWorldUrhoApp
 
 type HelloWorldUrhoApp(options: ApplicationOptions) =
     inherit Urho.Application(options)
@@ -37,15 +48,15 @@ type HelloWorldUrhoApp(options: ApplicationOptions) =
     override this.Start() =
         base.Start()
 
-        let (scene, camera, node) = HelloWorldUrhoApp.create3DObject this.ResourceCache
-        this.Renderer.SetViewport(0u, new Viewport(scene, camera, null))
-        this.Node <- node
+        let (_, pyramidNode) =
+            create3DScene()
+            |> addLight
+            |> addCamera this.Renderer
+            |> addPyramid this.ResourceCache
 
-        let actions: FiniteTimeAction array = [| new RepeatForever(new RotateBy(1.f, 0.f, 90.f, 0.f)) |]
-        node.RunActionsAsync(actions)
-        |> Async.AwaitTask
-        |> Async.Ignore
-        |> Async.StartImmediate
+        rotateNodeForever pyramidNode
+
+        this.Node <- pyramidNode
 
     member this.ToggleActions() =
         this.IsPaused <- not this.IsPaused
