@@ -4,6 +4,7 @@
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Models.fs" />
     <Compile Include="UrhoSharp.fs" />
     <Compile Include="ElmishExtensions.fs" />
     <Compile Include="HelloWorldUrhoApp.fs" />
