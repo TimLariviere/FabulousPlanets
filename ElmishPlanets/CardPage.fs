@@ -13,18 +13,18 @@ module CardPage =
             Planet: Planet
         }
 
-    type Msg = NoMsg
+    type Msg = UrhoAppCreated of HelloWorldUrhoApp
 
     type ExternalMsg = NoOp
 
     let init planet =
         {
             Planet = planet
-        }, Cmd.none
+        }
 
     let update msg model =
         match msg with
-        | NoMsg -> model, Cmd.none, ExternalMsg.NoOp
+        | UrhoAppCreated app -> model, Cmd.none, ExternalMsg.NoOp
 
     let mkInfoLabel title text =
         View.StackLayout(
@@ -40,11 +40,13 @@ module CardPage =
             title=model.Planet.Info.Name,
             content=View.Grid(
                 children=[
-                    View.UrhoSurface<HelloWorldUrhoApp>(options=View.UrhoApplicationOptions(assetsFolder="Data"))
+                    View.UrhoSurface<HelloWorldUrhoApp>(
+                        options=View.UrhoApplicationOptions(assetsFolder="Data"),
+                        created=(UrhoAppCreated >> dispatch)
+                    )
                     View.StackLayout(
                         padding=20.,
                         children=[
-                            View.Label(text=model.Planet.Info.Name).TitleFontSize().WhiteText()
                             mkInfoLabel "Diameter" (kmToString model.Planet.Info.Diameter)
                             mkInfoLabel "Temperature" (celsiusToString model.Planet.Info.Temperature)
                             mkInfoLabel "Speed" (speedToString model.Planet.Info.Speed)
