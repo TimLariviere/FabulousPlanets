@@ -1,6 +1,7 @@
 ﻿namespace ElmishPlanets
 
 open Cmd
+open Models
 open Elmish.XamarinForms
 open Elmish.XamarinForms.DynamicViews
 open Xamarin.Forms
@@ -42,49 +43,21 @@ module App =
                 content=View.ListView(
                     itemTapped=(fun i -> dispatch (ShowPlanet i)),
                     items=[
-                        View.Label(text="Mercury")
-                        View.Label(text="Venus")
-                        View.Label(text="Earth")
-                        View.Label(text="Mars")
-                        View.Label(text="Jupiter")
-                        View.Label(text="Saturn")
-                        View.Label(text="Uranus")
-                        View.Label(text="Neptune")
+                        for i in 0 .. 1 .. (solarObjects.Length - 1) do
+                            yield View.Label(text=solarObjects.[i].Info.Name)
                     ]
                 )
             )
 
         let planetPage =
-            View.ContentPage(
-                appearing=(fun () -> dispatch Appearing),
-                disappearing=(fun () -> dispatch Disappearing),
-                content =
-                    match model.ShowSurface with
-                    | false ->
-                        View.Label(text = "Loading...", verticalOptions = LayoutOptions.Center, horizontalOptions = LayoutOptions.Center)
-                    | true ->
-                        View.Grid(
-                            children=[
-                                View.UrhoSurface<HelloWorldUrhoApp>(
-                                    options=View.UrhoApplicationOptions(assetsFolder = "Data"),
-                                    created=(fun app -> dispatch (Created app))
-                                )
-                            
-                                View.StackLayout(
-                                    padding=20.0,
-                                    children=[
-                                        View.Label(text = "Earth", fontSize = Device.GetNamedSize(NamedSize.Large, typeof<Label>) * 1.5, textColor = Color.White)
-                                        View.Button(text="Toggle animations", command=(fun () -> dispatch ToggleAnimations), verticalOptions=LayoutOptions.EndAndExpand)
-                                    ]
-                                )
-                            ]
-                        )
-            )
+            match model.Planet with
+            | None -> None
+            | Some i -> Some (CardPage.view { Planet = solarObjects.[i] } dispatch)
 
         View.NavigationPage(
             pages=[
                 yield mainPage
-                if model.Planet.IsSome then yield planetPage else ()
+                match planetPage with None -> () | Some p -> yield p
             ]
         )
 

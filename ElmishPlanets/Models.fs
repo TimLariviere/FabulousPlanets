@@ -29,6 +29,15 @@ module Models =
             Moons: Moon array
         }
 
+    let converter unit (value: float<'a>) =
+        value |> float |> string |> (fun s -> s + unit)
+        
+    let kmToString (km: float<km>) = converter " km" km
+    let celsiusToString (degrees: float<celsius>) = converter "°C" degrees
+    let speedToString (speed: float<km/s>) = converter " km/s" speed
+    let massToString (mass: float<Septillion * kg>) = converter " * 10^24 kg" mass
+    let intOptionToString defaultValue (value: int option) = match value with None -> defaultValue | Some v -> (string v)
+
     // Infos from https://www.tes.com/teaching-resource/solar-system-top-trumps-6166065 and http://planetfacts.org
     let solarObjects = [|
         {
