@@ -55,7 +55,6 @@ module UrhoSharpExtensions =
 
             let updateApplicationOptions (target: UrhoSurface) v =
                 let updateAsync = (async {
-                    do! Async.Sleep 500 // Calling Show() too early results in a bad Viewport for iOS -- Need to rework this
                     let applicationOptions = createApplicationOptions v
                     let! application = target.Show<'T>(applicationOptions) |> Async.AwaitTask
                     match created with

@@ -30,12 +30,16 @@ module Models =
         }
 
     let converter unit (value: float<'a>) =
-        value |> float |> string |> (fun s -> s + unit)
+        value |> float |> (fun f -> f.ToString("N0") + unit)
+
+
+    let converterWith2Decimals unit (value: float<'a>) =
+        value |> float |> (fun f -> f.ToString("N2") + unit)
         
     let kmToString (km: float<km>) = converter " km" km
     let celsiusToString (degrees: float<celsius>) = converter "°C" degrees
-    let speedToString (speed: float<km/s>) = converter " km/s" speed
-    let massToString (mass: float<Septillion * kg>) = converter " * 10^24 kg" mass
+    let speedToString (speed: float<km/s>) = converterWith2Decimals " km/s" speed
+    let massToString (mass: float<Septillion * kg>) = converterWith2Decimals " * 10^24 kg" mass
     let intOptionToString defaultValue (value: int option) = match value with None -> defaultValue | Some v -> (string v)
 
     // Infos from https://www.tes.com/teaching-resource/solar-system-top-trumps-6166065 and http://planetfacts.org

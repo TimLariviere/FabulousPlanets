@@ -10,20 +10,25 @@ module CardPage =
 
     type Model =
         {
+            HasAppeared: bool
             Planet: Planet
         }
 
-    type Msg = UrhoAppCreated of HelloWorldUrhoApp
+    type Msg =
+        | PageAppearing
+        | UrhoAppCreated of HelloWorldUrhoApp
 
     type ExternalMsg = NoOp
 
     let init planet =
         {
+            HasAppeared = false
             Planet = planet
         }
 
     let update msg model =
         match msg with
+        | PageAppearing -> { model with HasAppeared = true }, Cmd.none, ExternalMsg.NoOp
         | UrhoAppCreated app -> model, Cmd.none, ExternalMsg.NoOp
 
     let mkInfoLabel title text =
@@ -37,11 +42,12 @@ module CardPage =
 
     let view (model: Model) dispatch =
         View.ContentPage(
+            appearing=(fun () -> dispatch PageAppearing),
             title=model.Planet.Info.Name,
             content=View.Grid(
                 children=[
                     View.UrhoSurface<HelloWorldUrhoApp>(
-                        options=View.UrhoApplicationOptions(assetsFolder="Data"),
+                        ?options=(match model.HasAppeared with false -> None | true -> Some (View.UrhoApplicationOptions(assetsFolder="Data"))),
                         created=(UrhoAppCreated >> dispatch)
                     )
                     View.StackLayout(
