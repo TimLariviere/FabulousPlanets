@@ -45,7 +45,12 @@ module App =
                     itemTapped=(SelectPlanet >> dispatch),
                     items=[
                         for i in 0 .. 1 .. (solarObjects.Length - 1) do
-                            yield View.Label(text=solarObjects.[i].Info.Name).WhiteText()
+                            yield View.StackLayout(
+                                padding=Thickness(20., 10.),
+                                children=[
+                                    View.Label(text=solarObjects.[i].Info.Name, verticalOptions=LayoutOptions.Center).WhiteText()
+                                ]
+                            )
                     ]
                 )
             )
@@ -59,6 +64,7 @@ module App =
             appearing=(fun() -> (Xamarin.Forms.Application.Current.MainPage :?> Xamarin.Forms.NavigationPage).On<iOS>().SetPrefersLargeTitles(true) |> ignore),
             barBackgroundColor=Color.Black,
             barTextColor=Color.White,
+            backgroundColor=Color.Black,
             pages=[
                 yield mainPage
                 match planetPage with None -> () | Some p -> yield p

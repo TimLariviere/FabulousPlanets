@@ -55,6 +55,7 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Assets\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -174,6 +175,24 @@
     <Compile Include="Properties\AssemblyInfo.fs" />
     <Compile Include="MainActivity.fs" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidAsset Include="Assets\Data\Materials\Earth.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Jupiter.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Mars.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Mercury.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Neptune.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Saturn.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Uranus.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Venus.xml" />
+    <AndroidAsset Include="Assets\Data\Textures\earth_bump.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\earth_specular.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\earth_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\jupiter_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\mars_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\mercury_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\neptune_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\saturn_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\uranus_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\venus_texture.jpg" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
@@ -191,6 +210,14 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\Data\Materials\Earth.xml" />
+    <AndroidResource Include="Resources\Data\Materials\Jupiter.xml" />
+    <AndroidResource Include="Resources\Data\Materials\Mars.xml" />
+    <AndroidResource Include="Resources\Data\Materials\Mercury.xml" />
+    <AndroidResource Include="Resources\Data\Materials\Neptune.xml" />
+    <AndroidResource Include="Resources\Data\Materials\Saturn.xml" />
+    <AndroidResource Include="Resources\Data\Materials\Uranus.xml" />
+    <AndroidResource Include="Resources\Data\Materials\Venus.xml" />
     <None Include="packages.config" />
     <ProjectReference Include="..\ElmishPlanets\ElmishPlanets.fsproj">
       <Project>{AFC7A38E-7586-4121-A411-B4C849A0125E}</Project>

@@ -3,6 +3,7 @@ namespace ElmishPlanets
 open Urho
 open Urho.Actions
 open Models
+open System
 
 module PlanetVisualizerUrhoApp =
     let create3DScene () =
@@ -34,8 +35,8 @@ module PlanetVisualizerUrhoApp =
         renderer.SetViewport(0u, viewport)
         scene
 
-    let rotateNodeForever (node: Node) =
-        let actions: FiniteTimeAction array = [| new RepeatForever(new RotateBy(1.f, 0.f, -90.f, 0.f)) |]
+    let rotateNodeForever rotationSpeed (node: Node) =
+        let actions: FiniteTimeAction array = [| new RepeatForever(new RotateBy(1.f, 0.f, rotationSpeed, 0.f)) |]
         node.RunActionsAsync(actions)
         |> Async.AwaitTask
         |> Async.Ignore
@@ -59,7 +60,15 @@ type PlanetVisualizerUrhoApp(options: ApplicationOptions) =
         this.Scene <- scene
 
     member this.LoadPlanet (planet: Planet) =
-        this.Scene
-        |> addPlanet this.ResourceCache planet.Info.Name planet.Info.AxialTilt
-        |> snd
-        |> rotateNodeForever
+        Urho.Application.InvokeOnMain(fun() ->
+            let rotationSpeedRelativeToEarth = planet.Info.RotationPeriod / 24.<h>
+            let rotationSpeedInDegrees = -90. / rotationSpeedRelativeToEarth
+
+            // Round rotation speed for smoother animations
+            let rotationSpeed = if rotationSpeedInDegrees > 1. then Math.Round(rotationSpeedInDegrees) else rotationSpeedInDegrees
+
+            this.Scene
+            |> addPlanet this.ResourceCache planet.Info.Name planet.Info.AxialTilt
+            |> snd
+            |> rotateNodeForever (float32 rotationSpeed)
+        )

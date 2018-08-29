@@ -48,6 +48,7 @@ module CardPage =
         View.ContentPage(
             appearing=(fun () -> dispatch PageAppearing),
             title=model.Planet.Info.Name,
+            backgroundColor=Color.Black,
             content=View.Grid(
                 children=[
                     View.UrhoSurface<PlanetVisualizerUrhoApp>(
