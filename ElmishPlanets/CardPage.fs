@@ -16,9 +16,13 @@ module CardPage =
 
     type Msg =
         | PageAppearing
-        | UrhoAppCreated of HelloWorldUrhoApp
+        | UrhoAppCreated of PlanetVisualizerUrhoApp
 
     type ExternalMsg = NoOp
+
+    let loadPlanetModel (app: PlanetVisualizerUrhoApp) (model: Model) =
+        app.LoadPlanet(model.Planet)
+        None
 
     let init planet =
         {
@@ -29,7 +33,7 @@ module CardPage =
     let update msg model =
         match msg with
         | PageAppearing -> { model with HasAppeared = true }, Cmd.none, ExternalMsg.NoOp
-        | UrhoAppCreated app -> model, Cmd.none, ExternalMsg.NoOp
+        | UrhoAppCreated app -> model, Cmd.ofMsgOption (loadPlanetModel app model), ExternalMsg.NoOp
 
     let mkInfoLabel title text =
         View.StackLayout(
@@ -46,7 +50,7 @@ module CardPage =
             title=model.Planet.Info.Name,
             content=View.Grid(
                 children=[
-                    View.UrhoSurface<HelloWorldUrhoApp>(
+                    View.UrhoSurface<PlanetVisualizerUrhoApp>(
                         ?options=(match model.HasAppeared with false -> None | true -> Some (View.UrhoApplicationOptions(assetsFolder="Data"))),
                         created=(UrhoAppCreated >> dispatch)
                     )

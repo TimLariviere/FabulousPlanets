@@ -2,21 +2,23 @@ namespace ElmishPlanets
 
 open Urho
 open Urho.Actions
+open Models
 
-module HelloWorldUrhoApp =
+module PlanetVisualizerUrhoApp =
     let create3DScene () =
         let scene = new Scene()
         scene.CreateComponent<Octree>() |> ignore
         scene
 
-    let addPyramid (resourceCache: Urho.Resources.ResourceCache) (scene: Scene) =
-        let node = scene.CreateChild()
+    let addPlanet (resourceCache: Urho.Resources.ResourceCache) name axialTilt (scene: Scene) =
+        scene.RemoveChild(scene.GetChild("planet"))
+        let node = scene.CreateChild(name="planet")
         node.Position <- Vector3(0.f, 0.f, 3.5f)
-        node.Rotation <- Quaternion(0.f, 0.f, -23.439281f)
+        node.Rotation <- Quaternion(0.f, 0.f, (float32 axialTilt) * -1.f)
         node.SetScale(1.25f)
         let modelObject = node.CreateComponent<StaticModel>()
         modelObject.Model <- CoreAssets.Models.Sphere
-        modelObject.SetMaterial(resourceCache.GetMaterial("Materials/Earth.xml"))
+        modelObject.SetMaterial(resourceCache.GetMaterial("Materials/" + name + ".xml"))
         (scene, node)
 
     let addLight (scene: Scene) =
@@ -39,29 +41,25 @@ module HelloWorldUrhoApp =
         |> Async.Ignore
         |> Async.StartImmediate
         
-open HelloWorldUrhoApp
+open PlanetVisualizerUrhoApp
 
-type HelloWorldUrhoApp(options: ApplicationOptions) =
+type PlanetVisualizerUrhoApp(options: ApplicationOptions) =
     inherit Urho.Application(options)
 
-    member val Node : Node = null with get, set
-    member val IsPaused = false with get, set
+    member val Scene: Scene = null with get, set
 
     override this.Start() =
         base.Start()
 
-        let (_, pyramidNode) =
+        let scene =
             create3DScene()
             |> addLight
             |> addCamera this.Renderer
-            |> addPyramid this.ResourceCache
 
-        rotateNodeForever pyramidNode
+        this.Scene <- scene
 
-        this.Node <- pyramidNode
-
-    member this.ToggleActions() =
-        this.IsPaused <- not this.IsPaused
-        match this.IsPaused with
-        | false -> this.Node.ResumeAllActions()
-        | true -> this.Node.PauseAllActions()
+    member this.LoadPlanet (planet: Planet) =
+        this.Scene
+        |> addPlanet this.ResourceCache planet.Info.Name planet.Info.AxialTilt
+        |> snd
+        |> rotateNodeForever

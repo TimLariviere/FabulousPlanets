@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -124,8 +124,22 @@
     <None Include="packages.config" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\Data\Materials\Earth.xml" />
+    <BundleResource Include="Resources\Data\Materials\Mercury.xml" />
+    <BundleResource Include="Resources\Data\Materials\Jupiter.xml" />
+    <BundleResource Include="Resources\Data\Materials\Mars.xml" />
+    <BundleResource Include="Resources\Data\Materials\Neptune.xml" />
+    <BundleResource Include="Resources\Data\Materials\Saturn.xml" />
+    <BundleResource Include="Resources\Data\Materials\Uranus.xml" />
+    <BundleResource Include="Resources\Data\Materials\Venus.xml" />
     <BundleResource Include="Resources\Data\Textures\earth_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\earth_specular.jpg" />
+    <BundleResource Include="Resources\Data\Textures\mars_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\mercury_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\neptune_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\saturn_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\uranus_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\venus_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\jupiter_texture.jpg" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>

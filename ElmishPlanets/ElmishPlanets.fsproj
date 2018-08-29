@@ -8,7 +8,7 @@
     <Compile Include="UrhoSharp.fs" />
     <Compile Include="ElmishExtensions.fs" />
     <Compile Include="Models.fs" />
-    <Compile Include="HelloWorldUrhoApp.fs" />
+    <Compile Include="PlanetVisualizerUrhoApp.fs" />
     <Compile Include="CardPage.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>
