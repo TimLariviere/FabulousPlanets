@@ -210,14 +210,6 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\Data\Materials\Earth.xml" />
-    <AndroidResource Include="Resources\Data\Materials\Jupiter.xml" />
-    <AndroidResource Include="Resources\Data\Materials\Mars.xml" />
-    <AndroidResource Include="Resources\Data\Materials\Mercury.xml" />
-    <AndroidResource Include="Resources\Data\Materials\Neptune.xml" />
-    <AndroidResource Include="Resources\Data\Materials\Saturn.xml" />
-    <AndroidResource Include="Resources\Data\Materials\Uranus.xml" />
-    <AndroidResource Include="Resources\Data\Materials\Venus.xml" />
     <None Include="packages.config" />
     <ProjectReference Include="..\ElmishPlanets\ElmishPlanets.fsproj">
       <Project>{AFC7A38E-7586-4121-A411-B4C849A0125E}</Project>
