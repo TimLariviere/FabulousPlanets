@@ -189,9 +189,6 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Elmish.XamarinForms">
-      <HintPath>..\packages\Elmish.XamarinForms.0.16.0\lib\netstandard2.0\Elmish.XamarinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -213,9 +210,6 @@
     <Reference Include="FSharp.Core">
       <HintPath>..\packages\FSharp.Core.4.5.2\lib\netstandard1.6\FSharp.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Elmish.XamarinForms.LiveUpdate">
-      <HintPath>..\packages\Elmish.XamarinForms.LiveUpdate.0.16.0\lib\netstandard2.0\Elmish.XamarinForms.LiveUpdate.dll</HintPath>
-    </Reference>
     <Reference Include="Urho.Forms">
       <HintPath>..\packages\UrhoSharp.Forms.1.8.93\lib\Xamarin.iOS10\Urho.Forms.dll</HintPath>
     </Reference>
@@ -223,5 +217,11 @@
       <Project>{AFC7A38E-7586-4121-A411-B4C849A0125E}</Project>
       <Name>ElmishPlanets</Name>
     </ProjectReference>
+    <Reference Include="Elmish.XamarinForms">
+      <HintPath>..\packages\Elmish.XamarinForms.0.17.0\lib\netstandard2.0\Elmish.XamarinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmish.XamarinForms.LiveUpdate">
+      <HintPath>..\packages\Elmish.XamarinForms.LiveUpdate.0.17.0\lib\netstandard2.0\Elmish.XamarinForms.LiveUpdate.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
