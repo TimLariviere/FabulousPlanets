@@ -10,7 +10,7 @@ module PlanetVisualizerUrhoApp =
 
     let create3DScene (resourceCache: Urho.Resources.ResourceCache) =
         let scene = new Scene()
-        scene.LoadXmlFromCache(resourceCache, "Scenes/EarthScene.xml") |> ignore
+        scene.LoadXmlFromCache(resourceCache, "Scenes/SaturnScene.xml") |> ignore
         scene
         
     let setViewport (renderer: Renderer) (scene: Scene) =
@@ -21,20 +21,26 @@ module PlanetVisualizerUrhoApp =
         scene
         
     let findPlanet (scene: Scene) =
-        scene.GetChild("planet")
+        let planet = scene.GetChild("planet")
+        let body = planet.GetChild("body")
+        (planet, body)
         
-    let setMaterial (resourceCache: Urho.Resources.ResourceCache) materialPath (node: Node) =
-        let staticModel = node.GetComponent<StaticModel>()
+    let setMaterial (resourceCache: Urho.Resources.ResourceCache) materialPath (planet: Node, body: Node) =
+        let staticModel = body.GetComponent<StaticModel>()
         staticModel.SetMaterial(resourceCache.GetMaterial(materialPath))
-        node
+        (planet, body)
         
-    let setAxialTilt axialTilt (node: Node) =
-        node.Rotation <- Quaternion(0.f, 0.f, (float32 axialTilt) * -1.f)
-        node
+    let setAxialTilt axialTilt (planet: Node, body: Node) =
+        planet.Rotation <- Quaternion(0.f, 0.f, (float32 axialTilt) * -1.f)
+        (planet, body)
         
-    let rotatePlanetForever rotationSpeed (node: Node) =
+    let enableNode (planet: Node, body: Node) =
+        planet.Enabled <- true
+        (planet, body)
+        
+    let rotatePlanetForever rotationSpeed (planet: Node, _) =
         let actions: FiniteTimeAction array = [| new RepeatForever(new RotateBy(1.f, 0.f, rotationSpeed, 0.f)) |]
-        node.RunActionsAsync(actions)
+        planet.RunActionsAsync(actions)
         |> Async.AwaitTask
         |> Async.Ignore
         |> Async.StartImmediate
@@ -67,5 +73,6 @@ type PlanetVisualizerUrhoApp(options: ApplicationOptions) =
             |> findPlanet
             |> setMaterial this.ResourceCache ("Materials/" + planet.Info.Name + ".xml")
             |> setAxialTilt (float32 planet.Info.AxialTilt)
+            |> enableNode
             |> rotatePlanetForever (float32 rotationSpeed)
         )

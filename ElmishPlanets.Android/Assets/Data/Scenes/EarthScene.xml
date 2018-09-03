@@ -26,7 +26,7 @@
 		</component>
 	</node>
 	<node id="4">
-		<attribute name="Is Enabled" value="true" />
+		<attribute name="Is Enabled" value="false" />
 		<attribute name="Name" value="planet" />
 		<attribute name="Tags" />
 		<attribute name="Position" value="0 0 3.5" />
@@ -35,7 +35,6 @@
 		<attribute name="Variables" />
 		<component type="StaticModel" id="7">
 			<attribute name="Model" value="Model;Models/Sphere.mdl" />
-			<attribute name="Material" value="Material;Materials/Earth.xml" />
 		</component>
 	</node>
 	<node id="5">

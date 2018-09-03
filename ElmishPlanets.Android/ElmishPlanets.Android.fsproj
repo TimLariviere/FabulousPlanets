@@ -51,13 +51,6 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
-    <Folder Include="Resources\drawable-hdpi\" />
-    <Folder Include="Resources\drawable-xhdpi\" />
-    <Folder Include="Resources\drawable-xxhdpi\" />
-    <Folder Include="Resources\drawable-xxxhdpi\" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
@@ -171,6 +164,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml" />
+    <Compile Include="Properties\AssemblyInfo.fs" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidAsset Include="Assets\Data\Materials\Earth.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Jupiter.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Mars.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Mercury.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Neptune.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Saturn.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Skybox.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Uranus.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\Venus.xml" />
     <AndroidAsset Include="Assets\Data\Textures\venus_texture.jpg" />
     <AndroidAsset Include="Assets\Data\Textures\uranus_texture.jpg" />
     <AndroidAsset Include="Assets\Data\Textures\Space.png" />
@@ -184,22 +189,6 @@
     <AndroidAsset Include="Assets\Data\Textures\Earth_Night.jpg" />
     <AndroidAsset Include="Assets\Data\Textures\Earth_Clouds.jpg" />
     <AndroidAsset Include="Assets\Data\Textures\Earth.jpg" />
-    <None Include="Properties\AndroidManifest.xml" />
-    <Compile Include="Properties\AssemblyInfo.fs" />
-    <Compile Include="MainActivity.fs" />
-    <None Include="Assets\AboutAssets.txt" />
-    <AndroidAsset Include="Assets\Data\Materials\Earth.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\Jupiter.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\Mars.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\Mercury.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\Neptune.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\Saturn.xml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidAsset>
-    <AndroidAsset Include="Assets\Data\Materials\Skybox.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\Uranus.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\Venus.xml" />
     <AndroidAsset Include="Assets\Data\Scenes\EarthScene.xml" />
     <AndroidAsset Include="Assets\Data\Shaders\GLSL\CustomLitSolid.glsl" />
     <AndroidAsset Include="Assets\Data\Techniques\EarthTechnique.xml" />
@@ -220,11 +209,16 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <Compile Include="MainActivity.fs" />
     <None Include="packages.config" />
     <ProjectReference Include="..\ElmishPlanets\ElmishPlanets.fsproj">
       <Project>{AFC7A38E-7586-4121-A411-B4C849A0125E}</Project>
       <Name>ElmishPlanets</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Data\Textures\Saturn_Rings.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\Skybox.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets')" />

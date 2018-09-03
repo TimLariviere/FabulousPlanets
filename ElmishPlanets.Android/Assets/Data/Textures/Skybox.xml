@@ -1,0 +1,9 @@
+<cubemap>
+    <face name="Textures/Space.png" />
+    <face name="Textures/Space.png" />
+    <face name="Textures/Space.png" />
+    <face name="Textures/Space.png" />
+    <face name="Textures/Space.png" />
+    <face name="Textures/Space.png" />
+    <quality low="0" />
+</cubemap>
