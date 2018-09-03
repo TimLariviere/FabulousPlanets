@@ -14,7 +14,8 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>ElmishPlanets.iOS</AssemblyName>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <RestorePackages>true</RestorePackages>
     <SelectedDevice>iPhone Nukem</SelectedDevice>
@@ -50,6 +51,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer: Timothé LARIVIERE (8KU3KBCSV8)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -130,8 +132,6 @@
     <BundleResource Include="Resources\Data\Materials\Saturn.xml" />
     <BundleResource Include="Resources\Data\Materials\Uranus.xml" />
     <BundleResource Include="Resources\Data\Materials\Venus.xml" />
-    <BundleResource Include="Resources\Data\Textures\earth_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\earth_specular.jpg" />
     <BundleResource Include="Resources\Data\Textures\mars_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\mercury_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\neptune_texture.jpg" />
@@ -223,5 +223,21 @@
     <Reference Include="Elmish.XamarinForms.LiveUpdate">
       <HintPath>..\packages\Elmish.XamarinForms.LiveUpdate.0.17.0\lib\netstandard2.0\Elmish.XamarinForms.LiveUpdate.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Data\Materials\Skybox.xml" />
+    <BundleResource Include="Resources\Data\Scenes\EarthScene.xml" />
+    <BundleResource Include="Resources\Data\Shaders\GLSL\CustomLitSolid.glsl" />
+    <BundleResource Include="Resources\Data\Techniques\EarthTechnique.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Data\Textures\Earth.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Earth_Clouds.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Earth_Night.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Earth_NormalsMap.png" />
+    <BundleResource Include="Resources\Data\Textures\Earth_SpecularMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Data\Textures\Space.png" />
   </ItemGroup>
 </Project>
