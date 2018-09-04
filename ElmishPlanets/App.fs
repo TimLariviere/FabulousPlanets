@@ -38,23 +38,18 @@ module App =
     let view (model: Model) dispatch =
         let mainPage =
             View.ContentPage(
-                title="ElmishPlanets",
+                title="Choose a planet",
                 backgroundColor=Color.Black,
-                content=View.StackLayout(
+                content=View.Grid(
                     padding=Thickness(20., 10.),
+                    coldefs=[ "*"; "*" ],
+                    rowdefs=[ "*"; "*"; "*"; "*" ],
                     children=[
-                        View.Label(text="Choose a planet", fontSize=Device.GetNamedSize(NamedSize.Large, typeof<Label>), horizontalTextAlignment=TextAlignment.Center).WhiteText()
-                        View.Grid(
-                            coldefs=[ "*"; "*" ],
-                            rowdefs=[ "*"; "*"; "*"; "*" ],
-                            children=[
-                                for i in 0 .. 1 .. (solarObjects.Length - 1) do
-                                    yield View.Button(text=solarObjects.[i].Info.Name, command=(fun () -> dispatch (SelectPlanet i)), verticalOptions=LayoutOptions.Fill, horizontalOptions=LayoutOptions.Fill)
-                                              .GridColumn(i % 2)
-                                              .GridRow(i % 4)
-                                              .WhiteText()
-                            ]
-                        )
+                        for i in 0 .. 1 .. (solarObjects.Length - 1) do
+                            yield View.Button(text=solarObjects.[i].Info.Name, command=(fun () -> dispatch (SelectPlanet i)), verticalOptions=LayoutOptions.Fill, horizontalOptions=LayoutOptions.Fill)
+                                      .GridColumn(i % 2)
+                                      .GridRow(i / 2)
+                                      .WhiteText()
                     ]
                 )
             )
