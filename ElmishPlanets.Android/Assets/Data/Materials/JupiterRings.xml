@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<material>
+  <technique name="Techniques/DiffAlpha.xml" />
+  <texture unit="diffuse" name="Textures/Jupiter_Rings.png" />
+  <cull value="none" />
+</material>

@@ -219,6 +219,28 @@
       <Name>ElmishPlanets</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Data\Materials\JupiterRings.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\NeptuneRings.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\UranusRings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Data\Textures\Jupiter_Rings.png" />
+    <AndroidAsset Include="Assets\Data\Textures\Neptune_Rings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Data\Textures\Uranus_Rings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Earth.jpg" />
+    <AndroidResource Include="Resources\drawable\Jupiter.jpg" />
+    <AndroidResource Include="Resources\drawable\Mars.jpg" />
+    <AndroidResource Include="Resources\drawable\Mercury.jpg" />
+    <AndroidResource Include="Resources\drawable\Neptune.jpg" />
+    <AndroidResource Include="Resources\drawable\Saturn.jpg" />
+    <AndroidResource Include="Resources\drawable\Uranus.jpg" />
+    <AndroidResource Include="Resources\drawable\Venus.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

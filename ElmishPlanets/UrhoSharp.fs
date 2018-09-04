@@ -30,12 +30,12 @@ module UrhoSharpExtensions =
                 HighDpi = highDpi
             }
 
-        static member UrhoSurface<'T when 'T :> Urho.Application>(?options: UrhoApplicationOptions, ?created: ('T -> unit),
-                                                                  // inherited attributes common to all views
-                                                                  ?horizontalOptions, ?verticalOptions, ?margin, ?gestureRecognizers, ?anchorX, ?anchorY, ?backgroundColor,
-                                                                  ?heightRequest, ?inputTransparent, ?isEnabled, ?isVisible, ?minimumHeightRequest, ?minimumWidthRequest,
-                                                                  ?opacity, ?rotation, ?rotationX, ?rotationY, ?scale, ?style, ?translationX, ?translationY, ?widthRequest,
-                                                                  ?resources, ?styles, ?styleSheets, ?classId, ?styleId, ?automationId) =
+        static member inline UrhoSurface<'T when 'T :> Urho.Application>(?options: UrhoApplicationOptions, ?created: ('T -> unit),
+                                                                         // inherited attributes common to all views
+                                                                         ?horizontalOptions, ?verticalOptions, ?margin, ?gestureRecognizers, ?anchorX, ?anchorY, ?backgroundColor,
+                                                                         ?heightRequest, ?inputTransparent, ?isEnabled, ?isVisible, ?minimumHeightRequest, ?minimumWidthRequest,
+                                                                         ?opacity, ?rotation, ?rotationX, ?rotationY, ?scale, ?style, ?translationX, ?translationY, ?widthRequest,
+                                                                         ?resources, ?styles, ?styleSheets, ?classId, ?styleId, ?automationId) =
 
             let attribCount = match options with Some _ -> 1 | None -> 0
             let attribCount = match created with Some _ -> attribCount + 1 | None -> attribCount

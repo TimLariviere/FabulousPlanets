@@ -46,10 +46,17 @@ module App =
                     rowdefs=[ "*"; "*"; "*"; "*" ],
                     children=[
                         for i in 0 .. 1 .. (solarObjects.Length - 1) do
-                            yield View.Button(text=solarObjects.[i].Info.Name, command=(fun () -> dispatch (SelectPlanet i)), verticalOptions=LayoutOptions.Fill, horizontalOptions=LayoutOptions.Fill)
-                                      .GridColumn(i % 2)
-                                      .GridRow(i / 2)
-                                      .WhiteText()
+                            yield View.Grid(
+                                padding=10.,
+                                verticalOptions=LayoutOptions.Fill,
+                                horizontalOptions=LayoutOptions.Fill,
+                                gestureRecognizers=[ View.TapGestureRecognizer(command=(fun () -> dispatch (SelectPlanet i))) ],
+                                children=[
+                                    View.Image(source=solarObjects.[i].Info.Name + ".jpg")
+                                    View.Label(text=solarObjects.[i].Info.Name, horizontalTextAlignment=TextAlignment.Center, verticalOptions=LayoutOptions.End).WhiteText()
+                                ]
+                            ).GridColumn(i % 2)
+                             .GridRow(i / 2)
                     ]
                 )
             )

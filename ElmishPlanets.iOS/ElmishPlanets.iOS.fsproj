@@ -237,4 +237,24 @@
       <HintPath>..\packages\Elmish.XamarinForms.LiveUpdate.0.17.0\lib\netstandard2.0\Elmish.XamarinForms.LiveUpdate.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Data\Textures\Jupiter_Rings.png" />
+    <BundleResource Include="Resources\Data\Textures\Neptune_Rings.png" />
+    <BundleResource Include="Resources\Data\Textures\Uranus_Rings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Data\Materials\JupiterRings.xml" />
+    <BundleResource Include="Resources\Data\Materials\NeptuneRings.xml" />
+    <BundleResource Include="Resources\Data\Materials\UranusRings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Earth.jpg" />
+    <BundleResource Include="Resources\Jupiter.jpg" />
+    <BundleResource Include="Resources\Mars.jpg" />
+    <BundleResource Include="Resources\Mercury.jpg" />
+    <BundleResource Include="Resources\Neptune.jpg" />
+    <BundleResource Include="Resources\Saturn.jpg" />
+    <BundleResource Include="Resources\Uranus.jpg" />
+    <BundleResource Include="Resources\Venus.jpg" />
+  </ItemGroup>
 </Project>

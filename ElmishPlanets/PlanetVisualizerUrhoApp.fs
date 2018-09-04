@@ -35,9 +35,17 @@ module PlanetVisualizerUrhoApp =
         let rings = planet.GetChild("rings")
         (planet, body, rings)
         
-    let setMaterial (resourceCache: Urho.Resources.ResourceCache) materialPath (planet: Node, body: Node, rings: Node) =
+    let setBodyMaterial (resourceCache: Urho.Resources.ResourceCache) materialPath (planet: Node, body: Node, rings: Node) =
         let staticModel = body.GetComponent<StaticModel>()
         staticModel.SetMaterial(resourceCache.GetMaterial(materialPath))
+        (planet, body, rings)
+        
+    let setRingsMaterialIf hasRings (resourceCache: Urho.Resources.ResourceCache) materialPath (planet: Node, body: Node, rings: Node) =
+        match hasRings with
+        | false -> ()
+        | true ->
+            let staticModel = rings.GetComponent<StaticModel>()
+            staticModel.SetMaterial(resourceCache.GetMaterial(materialPath))
         (planet, body, rings)
         
     let setAxialTilt axialTilt (planet: Node, body: Node, rings: Node) =
@@ -76,7 +84,8 @@ type PlanetVisualizerUrhoApp(options: ApplicationOptions) =
             |> removeUnusedNodes planet.Info.Rings.IsSome
             |> setViewport this.Renderer planet.Info.Rings.IsSome
             |> findPlanet
-            |> setMaterial this.ResourceCache ("Materials/" + planet.Info.Name + ".xml")
+            |> setBodyMaterial this.ResourceCache ("Materials/" + planet.Info.Name + ".xml")
+            |> setRingsMaterialIf planet.Info.Rings.IsSome this.ResourceCache ("Materials/" + planet.Info.Name + "Rings.xml")
             |> setAxialTilt (float32 planet.Info.AxialTilt)
             |> enableNode planet.Info.Rings.IsSome
             |> rotatePlanetForever (float32 rotationSpeed)

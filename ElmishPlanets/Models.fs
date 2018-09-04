@@ -165,7 +165,7 @@ module Models =
                     Description = "Uranus was the first planet to be discovered by a telescope, and is also visible to the naked eye. Uranus is sometimes referred to as an ice giant."
                     AxialTilt = 82.23<degrees>
                     RotationPeriod = -17.2<h>
-                    Rings = None
+                    Rings = Some true
                 }
             DistanceFromSun = 2872.5<million * km>
             Moons = [||]
