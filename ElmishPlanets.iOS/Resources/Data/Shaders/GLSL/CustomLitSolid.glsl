@@ -2,6 +2,7 @@
 #include "Samplers.glsl"
 #include "Transform.glsl"
 #include "ScreenPos.glsl"
+#include "Lighting.glsl"
 
 #ifdef COMPILEPS
 uniform vec2 cCloudsOffset;
@@ -20,15 +21,15 @@ void VS()
     vec3 worldPos = GetWorldPos(modelMatrix);
     vec4 pos = GetClipPos(worldPos);
     vec3 normal = GetWorldNormal(modelMatrix);
-    vec3 tangent = GetWorldTangent(modelMatrix).xyz;
-    vec3 bitangent = cross(tangent, normal) * iTangent.w;
+    vec4 tangent = GetWorldTangent(modelMatrix);
+    vec3 bitangent = cross(tangent.xyz, normal) * tangent.w;
     
     gl_Position = pos;
     
     vWorldPos = vec4(worldPos, GetDepth(pos));
     vNormal = normal;
     vTexCoord = vec4(GetTexCoord(iTexCoord), bitangent.xy);
-    vTangent = vec4(tangent, bitangent.z);
+    vTangent = vec4(tangent.xyz, bitangent.z);
 }
 
 void PS()
@@ -39,11 +40,13 @@ void PS()
     vec3 spec = texture2D(sSpecMap, vTexCoord.xy).xyz;
     
     mat3 tbn = mat3(vTangent.xyz, vec3(vTexCoord.zw, vTangent.w), vNormal);
-    vec3 normal = normalize(DecodeNormal(texture2D(sNormalMap, vTexCoord.xy)) * tbn);
+    vec3 normal = normalize(tbn * DecodeNormal(texture2D(sNormalMap, vTexCoord.xy)));
+
+    vec3 lightDir;
 
     vec3 finalColor = earthDiff.rgb;
     finalColor += cSpecColor.rgb * spec.rgb * cLightColor.a;
-    finalColor *= clamp(dot(normal, cLightDirPS), 0.0, 1.0);
+    finalColor *= GetDiffuse(normal, vWorldPos.xyz, lightDir);
     finalColor += clouds.rgb * (dot(vNormal, cLightDirPS) + 0.5);
     finalColor += night.rgb * (1.0 - dot(vNormal, cLightDirPS));
 

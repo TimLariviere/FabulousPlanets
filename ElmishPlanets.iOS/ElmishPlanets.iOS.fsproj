@@ -128,7 +128,7 @@
     <BundleResource Include="Resources\Data\Materials\Uranus.xml" />
     <BundleResource Include="Resources\Data\Materials\Venus.xml" />
     <BundleResource Include="Resources\Data\Materials\Skybox.xml" />
-    <BundleResource Include="Resources\Data\Scenes\EarthScene.xml" />
+    <BundleResource Include="Resources\Data\Scenes\PlanetScene.xml" />
     <BundleResource Include="Resources\Data\Shaders\GLSL\CustomLitSolid.glsl" />
     <BundleResource Include="Resources\Data\Techniques\EarthTechnique.xml" />
     <BundleResource Include="Resources\Data\Textures\Earth.jpg" />
@@ -143,6 +143,9 @@
     <BundleResource Include="Resources\Data\Textures\uranus_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\venus_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\jupiter_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Saturn_Rings.png" />
+    <BundleResource Include="Resources\Data\Textures\Skybox.xml" />
+    <BundleResource Include="Resources\Data\Textures\Space.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <Compile Include="HackedPageRenderer.fs" />
     <Compile Include="AppDelegate.fs" />
@@ -233,13 +236,5 @@
     <Reference Include="Elmish.XamarinForms.LiveUpdate">
       <HintPath>..\packages\Elmish.XamarinForms.LiveUpdate.0.17.0\lib\netstandard2.0\Elmish.XamarinForms.LiveUpdate.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Data\Textures\Saturn_Rings.png" />
-    <BundleResource Include="Resources\Data\Textures\Skybox.xml" />
-    <BundleResource Include="Resources\Data\Textures\Space.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Data\Scenes\SaturnScene.xml" />
   </ItemGroup>
 </Project>
