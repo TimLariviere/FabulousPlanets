@@ -4,11 +4,11 @@ open Models
 open Styles
 open Elmish.XamarinForms
 open Elmish.XamarinForms.DynamicViews
+open Xamarin.Forms.PlatformConfiguration
+open Xamarin.Forms.PlatformConfiguration.iOSSpecific
+open Xamarin.Forms
 
 module App =
-    open Xamarin.Forms.PlatformConfiguration
-    open Xamarin.Forms.PlatformConfiguration.iOSSpecific
-    open Xamarin.Forms
 
     type Model =
         { CardPageModel: CardPage.Model option }
@@ -38,19 +38,23 @@ module App =
     let view (model: Model) dispatch =
         let mainPage =
             View.ContentPage(
+                title="ElmishPlanets",
                 backgroundColor=Color.Black,
-                content=View.ListView(
-                    backgroundColor=Color.Black,
-                    separatorColor=Color.White,
-                    itemTapped=(SelectPlanet >> dispatch),
-                    items=[
-                        for i in 0 .. 1 .. (solarObjects.Length - 1) do
-                            yield View.StackLayout(
-                                padding=Thickness(20., 10.),
-                                children=[
-                                    View.Label(text=solarObjects.[i].Info.Name, verticalOptions=LayoutOptions.Center).WhiteText()
-                                ]
-                            )
+                content=View.StackLayout(
+                    padding=Thickness(20., 10.),
+                    children=[
+                        View.Label(text="Choose a planet", fontSize=Device.GetNamedSize(NamedSize.Large, typeof<Label>), horizontalTextAlignment=TextAlignment.Center).WhiteText()
+                        View.Grid(
+                            coldefs=[ "*"; "*" ],
+                            rowdefs=[ "*"; "*"; "*"; "*" ],
+                            children=[
+                                for i in 0 .. 1 .. (solarObjects.Length - 1) do
+                                    yield View.Button(text=solarObjects.[i].Info.Name, command=(fun () -> dispatch (SelectPlanet i)), verticalOptions=LayoutOptions.Fill, horizontalOptions=LayoutOptions.Fill)
+                                              .GridColumn(i % 2)
+                                              .GridRow(i % 4)
+                                              .WhiteText()
+                            ]
+                        )
                     ]
                 )
             )

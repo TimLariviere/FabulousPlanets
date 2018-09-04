@@ -6,8 +6,6 @@ open Models
 open System
 
 module PlanetVisualizerUrhoApp =
-    open Urho.Resources
-
     let create3DScene (resourceCache: Urho.Resources.ResourceCache) =
         let scene = new Scene()
         scene.LoadXmlFromCache(resourceCache, "Scenes/PlanetScene.xml") |> ignore
