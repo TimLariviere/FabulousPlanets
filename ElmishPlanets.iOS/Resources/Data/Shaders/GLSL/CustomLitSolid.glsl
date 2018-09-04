@@ -41,6 +41,7 @@ void PS()
     
     mat3 tbn = mat3(vTangent.xyz, vec3(vTexCoord.zw, vTangent.w), vNormal);
     vec3 normal = normalize(tbn * DecodeNormal(texture2D(sNormalMap, vTexCoord.xy)));
+    normal = vec3(-normal.x, normal.y, normal.z);
 
     vec3 lightDir;
 
