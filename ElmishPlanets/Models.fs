@@ -21,6 +21,7 @@ module Models =
             Description: string
             AxialTilt: float<degrees>
             RotationPeriod: float<h>
+            Rings: bool option
         }
 
     type Moon =
@@ -62,6 +63,7 @@ module Models =
                     Description = "Mercury is the closest planet to th Sun, orbiting our star at an average distance of 57.9 million kilometres, taking 88 days to complete a trip around the sun. Mercury is also the smallest planet in our Solar System."
                     AxialTilt = 0.03<degrees>
                     RotationPeriod = 1407.6<h>
+                    Rings = None
                 }
             DistanceFromSun = 57.9<million * km>
             Moons = [||]
@@ -78,6 +80,7 @@ module Models =
                     Description = "Venus is our neighbouring planet. It is impossible to state when Venus was discovered as it is visible with the naked eye."
                     AxialTilt = 2.64<degrees>
                     RotationPeriod = -5832.5<h>
+                    Rings = None
                 }
             DistanceFromSun = 108.2<million * km>
             Moons = [||]
@@ -94,6 +97,7 @@ module Models =
                     Description = "Our home, some 4.5 billion years old. Life appeared on the surface just 1 billion years after creation with human beings appearing just 200,000 years ago"
                     AxialTilt = 23.44<degrees>
                     RotationPeriod = 23.9<h>
+                    Rings = None
                 }
             DistanceFromSun = 149.6<million * km>
             Moons = [||]
@@ -110,6 +114,7 @@ module Models =
                     Description = "The fourth planet from the Sun. The surface of Mars consists of iron oxide which gives the planet a red appearance, Mars is approximately half the width of the Earth and is also a neighbouring planet to us."
                     AxialTilt = 25.19<degrees>
                     RotationPeriod = 24.6<h>
+                    Rings = None
                 }
             DistanceFromSun = 227.9<million * km>
             Moons = [||]
@@ -126,6 +131,7 @@ module Models =
                     Description = "Jupiter is the largest planet in our Solar System. Described as a 'gas giant' it orbits our Sun at a distance of 778,000,000 kilometers. A distinct feature of Jupiter is the 'great red spot' which is a storm that has lasted for more the 400 years."
                     AxialTilt = 3.13<degrees>
                     RotationPeriod = 9.9<h>
+                    Rings = None
                 }
             DistanceFromSun = 778.6<million * km>
             Moons = [||]
@@ -142,6 +148,7 @@ module Models =
                     Description = "Saturn is the sixth planet from the Sun and the second largest planet in our Solar System. Probably best known for the rings that surround it, experts believe these rings formed from a destroyed moon millions of years ago."
                     AxialTilt = 26.73<degrees>
                     RotationPeriod = 10.7<h>
+                    Rings = Some true
                 }
             DistanceFromSun = 1433.5<million * km>
             Moons = [||]
@@ -158,6 +165,7 @@ module Models =
                     Description = "Uranus was the first planet to be discovered by a telescope, and is also visible to the naked eye. Uranus is sometimes referred to as an ice giant."
                     AxialTilt = 82.23<degrees>
                     RotationPeriod = -17.2<h>
+                    Rings = None
                 }
             DistanceFromSun = 2872.5<million * km>
             Moons = [||]
@@ -174,6 +182,7 @@ module Models =
                     Description = "Neptune is the eighth planet from the Sun and is 17 times the mass of the Earth. Storms on the planet have wind speeds of up to 2,100 kilometres per hour."
                     AxialTilt = 28.32<degrees>
                     RotationPeriod = 16.1<h>
+                    Rings = None
                 }
             DistanceFromSun = 4495.1<million * km>
             Moons = [||]

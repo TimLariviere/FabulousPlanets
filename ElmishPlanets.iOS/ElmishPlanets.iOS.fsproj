@@ -14,7 +14,8 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>ElmishPlanets.iOS</AssemblyName>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <RestorePackages>true</RestorePackages>
     <SelectedDevice>iPhone Nukem</SelectedDevice>
@@ -50,6 +51,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer: Timothé LARIVIERE (8KU3KBCSV8)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -116,22 +118,24 @@
   <Import Project="..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.1.0.697729\build\netstandard2.0\Xamarin.Forms.targets')" />
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.fs" />
-    <Compile Include="HackedPageRenderer.fs" />
-    <Compile Include="AppDelegate.fs" />
-    <None Include="Entitlements.plist" />
-    <None Include="Info.plist" />
-    <None Include="packages.config" />
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <BundleResource Include="Resources\Data\Materials\Earth.xml" />
     <BundleResource Include="Resources\Data\Materials\Mercury.xml" />
     <BundleResource Include="Resources\Data\Materials\Jupiter.xml" />
     <BundleResource Include="Resources\Data\Materials\Mars.xml" />
     <BundleResource Include="Resources\Data\Materials\Neptune.xml" />
     <BundleResource Include="Resources\Data\Materials\Saturn.xml" />
+    <BundleResource Include="Resources\Data\Materials\SaturnRings.xml" />
     <BundleResource Include="Resources\Data\Materials\Uranus.xml" />
     <BundleResource Include="Resources\Data\Materials\Venus.xml" />
-    <BundleResource Include="Resources\Data\Textures\earth_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\earth_specular.jpg" />
+    <BundleResource Include="Resources\Data\Materials\Skybox.xml" />
+    <BundleResource Include="Resources\Data\Scenes\PlanetScene.xml" />
+    <BundleResource Include="Resources\Data\Shaders\GLSL\CustomLitSolid.glsl" />
+    <BundleResource Include="Resources\Data\Techniques\EarthTechnique.xml" />
+    <BundleResource Include="Resources\Data\Textures\Earth.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Earth_Clouds.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Earth_Night.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Earth_NormalsMap.png" />
+    <BundleResource Include="Resources\Data\Textures\Earth_SpecularMap.png" />
     <BundleResource Include="Resources\Data\Textures\mars_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\mercury_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\neptune_texture.jpg" />
@@ -139,6 +143,15 @@
     <BundleResource Include="Resources\Data\Textures\uranus_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\venus_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\jupiter_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Saturn_Rings.png" />
+    <BundleResource Include="Resources\Data\Textures\Skybox.xml" />
+    <BundleResource Include="Resources\Data\Textures\Space.png" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <Compile Include="HackedPageRenderer.fs" />
+    <Compile Include="AppDelegate.fs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
