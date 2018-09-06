@@ -47,7 +47,7 @@
 			</component>
 		</node>
 		<node id="16777217">
-			<attribute name="Is Enabled" value="false" />
+			<attribute name="Is Enabled" value="true" />
 			<attribute name="Name" value="rings" />
 			<attribute name="Tags" />
 			<attribute name="Position" value="0 0.0527229 0" />
