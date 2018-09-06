@@ -14,20 +14,20 @@ module PlanetVisualizerUrhoApp =
     let removeUnusedNodes hasRings (scene: Scene) =
         match hasRings with
         | true ->
+            scene.GetChild("setup_rings").Enabled <- true
             scene.RemoveChild(scene.GetChild("setup_default"))
         | false ->
+            scene.GetChild("setup_default").Enabled <- true
             scene.RemoveChild(scene.GetChild("setup_rings"))
             scene.RemoveChild(scene.GetChild("planet").GetChild("rings"))
         scene
         
-    let setViewport (renderer: Renderer) hasRings (scene: Scene) =
-        let setupNode = if hasRings then scene.GetChild("setup_rings") else scene.GetChild("setup_default")
-        setupNode.Enabled <- true
-        let cameraNode = setupNode.GetChild("camera")
+    let setViewport (renderer: Renderer) (scene: Scene) =
+        let cameraNode = scene.GetChild("camera", recursive=true)
         let camera = cameraNode.GetComponent<Camera>()
         let viewport = new Viewport(scene, camera, null)
         renderer.SetViewport(0u, viewport)
-        scene
+        cameraNode
                 
     let findPlanet (scene: Scene) =
         let planet = scene.GetChild("planet")
@@ -69,8 +69,22 @@ open PlanetVisualizerUrhoApp
 type PlanetVisualizerUrhoApp(options: ApplicationOptions) =
     inherit Urho.Application(options)
     
+    member val PlanetNode: Node = null with get, set
+
     override this.Start() =
-        base.Start()            
+        base.Start()
+
+    override this.OnUpdate timeStep =
+        match this.Input.NumTouches with
+        | 0u -> ()
+        | 2u ->
+            let touch = this.Input.GetTouch(0u)
+            this.PlanetNode.RemoveAllActions()
+            this.PlanetNode.Rotate(Quaternion(0.0f, 0.0f, (float32 -touch.Delta.X)), TransformSpace.World)
+        | _ ->
+            let touch = this.Input.GetTouch(0u)
+            this.PlanetNode.RemoveAllActions()
+            this.PlanetNode.Rotate(Quaternion((float32 -touch.Delta.Y), (float32 -touch.Delta.X), 0.f), TransformSpace.World)
 
     member this.LoadPlanet (planet: Planet) =
         Urho.Application.InvokeOnMain(fun() ->
@@ -80,13 +94,20 @@ type PlanetVisualizerUrhoApp(options: ApplicationOptions) =
             // Round rotation speed for smoother animations
             let rotationSpeed = if rotationSpeedInDegrees > 1. then Math.Round(rotationSpeedInDegrees) else rotationSpeedInDegrees
         
-            create3DScene this.ResourceCache
-            |> removeUnusedNodes planet.Info.Rings.IsSome
-            |> setViewport this.Renderer planet.Info.Rings.IsSome
+            let scene = 
+                create3DScene this.ResourceCache
+                |> removeUnusedNodes planet.Info.Rings.IsSome
+
+            let cameraNode =
+                scene
+                |> setViewport this.Renderer
+
+            scene
             |> findPlanet
             |> setBodyMaterial this.ResourceCache ("Materials/" + planet.Info.Name + ".xml")
             |> setRingsMaterialIf planet.Info.Rings.IsSome this.ResourceCache ("Materials/" + planet.Info.Name + "Rings.xml")
             |> setAxialTilt (float32 planet.Info.AxialTilt)
             |> enableNode planet.Info.Rings.IsSome
+            |> (fun (p, b, r) -> this.PlanetNode <- p; (p, b, r))
             |> rotatePlanetForever (float32 rotationSpeed)
         )

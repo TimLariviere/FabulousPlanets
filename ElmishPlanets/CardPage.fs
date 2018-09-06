@@ -57,6 +57,7 @@ module CardPage =
                     )
                     View.StackLayout(
                         padding=20.,
+                        inputTransparent=true,
                         children=[
                             mkInfoLabel "Diameter" (kmToString model.Planet.Info.Diameter)
                             mkInfoLabel "Temperature" (celsiusToString model.Planet.Info.Temperature)
