@@ -169,33 +169,47 @@
     <None Include="Assets\AboutAssets.txt" />
     <AndroidAsset Include="Assets\Data\Materials\Earth.xml" />
     <AndroidAsset Include="Assets\Data\Materials\Jupiter.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\JupiterRings.xml" />
     <AndroidAsset Include="Assets\Data\Materials\Mars.xml" />
     <AndroidAsset Include="Assets\Data\Materials\Mercury.xml" />
     <AndroidAsset Include="Assets\Data\Materials\Neptune.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\NeptuneRings.xml" />
     <AndroidAsset Include="Assets\Data\Materials\Saturn.xml" />
     <AndroidAsset Include="Assets\Data\Materials\SaturnRings.xml" />
     <AndroidAsset Include="Assets\Data\Materials\Skybox.xml" />
     <AndroidAsset Include="Assets\Data\Materials\Uranus.xml" />
+    <AndroidAsset Include="Assets\Data\Materials\UranusRings.xml" />
     <AndroidAsset Include="Assets\Data\Materials\Venus.xml" />
     <AndroidAsset Include="Assets\Data\Scenes\PlanetScene.xml" />
     <AndroidAsset Include="Assets\Data\Shaders\GLSL\CustomLitSolid.glsl" />
     <AndroidAsset Include="Assets\Data\Techniques\EarthTechnique.xml" />
-    <AndroidAsset Include="Assets\Data\Textures\venus_texture.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\uranus_texture.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\Space.png" />
-    <AndroidAsset Include="Assets\Data\Textures\saturn_texture.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\neptune_texture.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\mercury_texture.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\mars_texture.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\jupiter_texture.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\Earth_SpecularMap.png" />
-    <AndroidAsset Include="Assets\Data\Textures\Earth_NormalsMap.png" />
-    <AndroidAsset Include="Assets\Data\Textures\Earth_Night.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\Earth_Clouds.jpg" />
     <AndroidAsset Include="Assets\Data\Textures\Earth.jpg" />
-    <AndroidAsset Include="Assets\Data\Textures\Skybox.xml" />
+    <AndroidAsset Include="Assets\Data\Textures\Earth_Clouds.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\Earth_Night.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\Earth_NormalsMap.png" />
+    <AndroidAsset Include="Assets\Data\Textures\Earth_SpecularMap.png" />
+    <AndroidAsset Include="Assets\Data\Textures\Jupiter_Rings.png" />
+    <AndroidAsset Include="Assets\Data\Textures\jupiter_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\mars_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\mercury_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\Neptune_Rings.png" />
+    <AndroidAsset Include="Assets\Data\Textures\neptune_texture.jpg" />
     <AndroidAsset Include="Assets\Data\Textures\Saturn_Rings.png" />
+    <AndroidAsset Include="Assets\Data\Textures\saturn_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\Skybox.xml" />
+    <AndroidAsset Include="Assets\Data\Textures\Space.png" />
+    <AndroidAsset Include="Assets\Data\Textures\Uranus_Rings.png" />
+    <AndroidAsset Include="Assets\Data\Textures\uranus_texture.jpg" />
+    <AndroidAsset Include="Assets\Data\Textures\venus_texture.jpg" />
     <None Include="Resources\AboutResources.txt" />
+    <AndroidResource Include="Resources\drawable\Earth.jpg" />
+    <AndroidResource Include="Resources\drawable\Jupiter.jpg" />
+    <AndroidResource Include="Resources\drawable\Mars.jpg" />
+    <AndroidResource Include="Resources\drawable\Mercury.jpg" />
+    <AndroidResource Include="Resources\drawable\Neptune.jpg" />
+    <AndroidResource Include="Resources\drawable\Saturn.jpg" />
+    <AndroidResource Include="Resources\drawable\Uranus.jpg" />
+    <AndroidResource Include="Resources\drawable\Venus.jpg" />
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -220,26 +234,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Data\Materials\JupiterRings.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\NeptuneRings.xml" />
-    <AndroidAsset Include="Assets\Data\Materials\UranusRings.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Data\Textures\Jupiter_Rings.png" />
-    <AndroidAsset Include="Assets\Data\Textures\Neptune_Rings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Data\Textures\Uranus_Rings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Earth.jpg" />
-    <AndroidResource Include="Resources\drawable\Jupiter.jpg" />
-    <AndroidResource Include="Resources\drawable\Mars.jpg" />
-    <AndroidResource Include="Resources\drawable\Mercury.jpg" />
-    <AndroidResource Include="Resources\drawable\Neptune.jpg" />
-    <AndroidResource Include="Resources\drawable\Saturn.jpg" />
-    <AndroidResource Include="Resources\drawable\Uranus.jpg" />
-    <AndroidResource Include="Resources\drawable\Venus.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.27.0.2.1\build\MonoAndroid81\Xamarin.Android.Support.Compat.targets')" />

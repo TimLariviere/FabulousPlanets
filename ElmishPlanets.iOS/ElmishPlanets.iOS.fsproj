@@ -119,15 +119,18 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.fs" />
     <BundleResource Include="Resources\Data\Materials\Earth.xml" />
-    <BundleResource Include="Resources\Data\Materials\Mercury.xml" />
     <BundleResource Include="Resources\Data\Materials\Jupiter.xml" />
+    <BundleResource Include="Resources\Data\Materials\JupiterRings.xml" />
     <BundleResource Include="Resources\Data\Materials\Mars.xml" />
+    <BundleResource Include="Resources\Data\Materials\Mercury.xml" />
     <BundleResource Include="Resources\Data\Materials\Neptune.xml" />
+    <BundleResource Include="Resources\Data\Materials\NeptuneRings.xml" />
     <BundleResource Include="Resources\Data\Materials\Saturn.xml" />
     <BundleResource Include="Resources\Data\Materials\SaturnRings.xml" />
-    <BundleResource Include="Resources\Data\Materials\Uranus.xml" />
-    <BundleResource Include="Resources\Data\Materials\Venus.xml" />
     <BundleResource Include="Resources\Data\Materials\Skybox.xml" />
+    <BundleResource Include="Resources\Data\Materials\Uranus.xml" />
+    <BundleResource Include="Resources\Data\Materials\UranusRings.xml" />
+    <BundleResource Include="Resources\Data\Materials\Venus.xml" />
     <BundleResource Include="Resources\Data\Scenes\PlanetScene.xml" />
     <BundleResource Include="Resources\Data\Shaders\GLSL\CustomLitSolid.glsl" />
     <BundleResource Include="Resources\Data\Techniques\EarthTechnique.xml" />
@@ -136,16 +139,27 @@
     <BundleResource Include="Resources\Data\Textures\Earth_Night.jpg" />
     <BundleResource Include="Resources\Data\Textures\Earth_NormalsMap.png" />
     <BundleResource Include="Resources\Data\Textures\Earth_SpecularMap.png" />
+    <BundleResource Include="Resources\Data\Textures\Jupiter_Rings.png" />
+    <BundleResource Include="Resources\Data\Textures\jupiter_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\mars_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\mercury_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Neptune_Rings.png" />
     <BundleResource Include="Resources\Data\Textures\neptune_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Saturn_Rings.png" />
     <BundleResource Include="Resources\Data\Textures\saturn_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Space.png" />
+    <BundleResource Include="Resources\Data\Textures\Skybox.xml" />
+    <BundleResource Include="Resources\Data\Textures\Uranus_Rings.png" />
     <BundleResource Include="Resources\Data\Textures\uranus_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\venus_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\jupiter_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\Saturn_Rings.png" />
-    <BundleResource Include="Resources\Data\Textures\Skybox.xml" />
-    <BundleResource Include="Resources\Data\Textures\Space.png" />
+    <BundleResource Include="Resources\Earth.jpg" />
+    <BundleResource Include="Resources\Jupiter.jpg" />
+    <BundleResource Include="Resources\Mars.jpg" />
+    <BundleResource Include="Resources\Mercury.jpg" />
+    <BundleResource Include="Resources\Neptune.jpg" />
+    <BundleResource Include="Resources\Saturn.jpg" />
+    <BundleResource Include="Resources\Uranus.jpg" />
+    <BundleResource Include="Resources\Venus.jpg" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <Compile Include="HackedPageRenderer.fs" />
     <Compile Include="AppDelegate.fs" />
@@ -236,25 +250,5 @@
     <Reference Include="Elmish.XamarinForms.LiveUpdate">
       <HintPath>..\packages\Elmish.XamarinForms.LiveUpdate.0.17.0\lib\netstandard2.0\Elmish.XamarinForms.LiveUpdate.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Data\Textures\Jupiter_Rings.png" />
-    <BundleResource Include="Resources\Data\Textures\Neptune_Rings.png" />
-    <BundleResource Include="Resources\Data\Textures\Uranus_Rings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Data\Materials\JupiterRings.xml" />
-    <BundleResource Include="Resources\Data\Materials\NeptuneRings.xml" />
-    <BundleResource Include="Resources\Data\Materials\UranusRings.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Earth.jpg" />
-    <BundleResource Include="Resources\Jupiter.jpg" />
-    <BundleResource Include="Resources\Mars.jpg" />
-    <BundleResource Include="Resources\Mercury.jpg" />
-    <BundleResource Include="Resources\Neptune.jpg" />
-    <BundleResource Include="Resources\Saturn.jpg" />
-    <BundleResource Include="Resources\Uranus.jpg" />
-    <BundleResource Include="Resources\Venus.jpg" />
   </ItemGroup>
 </Project>
