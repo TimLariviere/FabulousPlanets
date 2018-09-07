@@ -1,4 +1,4 @@
-namespace Elmish.XamarinForms.DynamicViews
+namespace Fabulous.DynamicViews
 
 open Urho
 open Urho.Forms
@@ -22,7 +22,7 @@ module UrhoSharpExtensions =
     let OptionsAttribKey = AttributeKey<_> "UrhoSurface_Options"
     let CreatedAttribKey<'T when 'T :> Urho.Application> = AttributeKey<('T -> unit)> "UrhoSurface_Created"
 
-    type Elmish.XamarinForms.DynamicViews.View with
+    type Fabulous.DynamicViews.View with
         static member UrhoApplicationOptions(?assetsFolder: string, ?orientation: ApplicationOptions.OrientationType, ?highDpi: bool) =
             {
                 AssetsFolder = assetsFolder

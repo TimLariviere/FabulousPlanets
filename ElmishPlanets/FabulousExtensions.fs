@@ -1,6 +1,6 @@
 ﻿namespace ElmishPlanets
 
-open Elmish.XamarinForms
+open Fabulous.Core
 
 module Cmd =
     let ofMsgOption (p: 'msg option) : Cmd<'msg> =

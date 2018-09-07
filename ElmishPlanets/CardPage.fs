@@ -2,8 +2,8 @@
 
 open Models
 open Styles
-open Elmish.XamarinForms
-open Elmish.XamarinForms.DynamicViews
+open Fabulous.Core
+open Fabulous.DynamicViews
 
 module CardPage =
     open Xamarin.Forms

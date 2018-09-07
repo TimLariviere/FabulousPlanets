@@ -1,8 +1,8 @@
 ﻿namespace ElmishPlanets
 
-open Elmish.XamarinForms.DynamicViews
+open Fabulous.DynamicViews
 open Xamarin.Forms
 
 module Styles =
-    type Elmish.XamarinForms.DynamicViews.ViewElement with
+    type Fabulous.DynamicViews.ViewElement with
         member this.WhiteText() = this.TextColor(Color.White)
