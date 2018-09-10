@@ -114,8 +114,8 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <PropertyGroup>
-        <__paket__Xamarin_Forms_props>netstandard1.0\Xamarin.Forms</__paket__Xamarin_Forms_props>
-        <__paket__Xamarin_Forms_targets>netstandard1.0\Xamarin.Forms</__paket__Xamarin_Forms_targets>
+        <__paket__Xamarin_Forms_props>netstandard2.0\Xamarin.Forms</__paket__Xamarin_Forms_props>
+        <__paket__Xamarin_Forms_targets>netstandard2.0\Xamarin.Forms</__paket__Xamarin_Forms_targets>
       </PropertyGroup>
     </When>
   </Choose>
@@ -229,6 +229,28 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <ItemGroup>
+        <Reference Include="Fabulous.Core">
+          <HintPath>..\packages\iosapp\Fabulous.Core\lib\netstandard2.0\Fabulous.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
+      <ItemGroup>
+        <Reference Include="Fabulous.LiveUpdate">
+          <HintPath>..\packages\iosapp\Fabulous.LiveUpdate\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
+      <ItemGroup>
         <Reference Include="FSharp.Core">
           <HintPath>..\packages\iosapp\FSharp.Core\lib\netstandard1.6\FSharp.Core.dll</HintPath>
           <Private>True</Private>
@@ -240,36 +262,9 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <ItemGroup>
-        <Reference Include="Microsoft.CSharp">
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
         <Reference Include="Newtonsoft.Json">
-          <HintPath>..\packages\iosapp\Newtonsoft.Json\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+          <HintPath>..\packages\iosapp\Newtonsoft.Json\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
           <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="System.IO.Compression">
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="System.Net.Http">
           <Paket>True</Paket>
         </Reference>
       </ItemGroup>
