@@ -1,0 +1,8 @@
+group neutral
+	Fabulous.Core
+	Fabulous.LiveUpdate
+	FSharp.Core
+	Newtonsoft.Json
+	Xamarin.Forms
+	Xamarin.Essentials
+	UrhoSharp.Forms

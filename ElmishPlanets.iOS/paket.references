@@ -1,0 +1,9 @@
+group iosapp
+	Fabulous.Core
+	Fabulous.LiveUpdate
+	FSharp.Core
+	Newtonsoft.Json
+	System.Numerics.Vectors
+	UrhoSharp.Forms
+	Xamarin.Essentials
+	Xamarin.Forms
