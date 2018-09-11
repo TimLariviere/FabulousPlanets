@@ -4,7 +4,7 @@ NUGET
     FAKE (5.3)
 
 GROUP androidapp
-RESTRICTION: == monoandroid8.1
+RESTRICTION: == monoandroid9.0
 NUGET
   remote: https://www.nuget.org/api/v2
     Fabulous.Core (0.20)

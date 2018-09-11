@@ -17,7 +17,7 @@ group neutral
 # Dependencies used when compiling and running Android samples. We can normally use the latest FSharp.Core and 
 # latest Xamarin.Forms though we pin them for now.
 group androidapp
-  framework monoandroid8.1
+  framework monoandroid9.0
   source https://www.nuget.org/api/v2
   nuget Fabulous.Core 0.20.0 prerelease
   nuget Fabulous.LiveUpdate 0.20.0 prerelease
