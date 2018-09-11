@@ -1,31 +1,6 @@
 group androidapp
-	Fabulous.Core
-	Fabulous.LiveUpdate
-	FSharp.Core
-	Newtonsoft.Json
-	System.Numerics.Vectors
-	UrhoSharp.Forms
-	Xamarin.Android.Arch.Core.Common
-	Xamarin.Android.Arch.Core.Runtime
-	Xamarin.Android.Arch.Lifecycle.Common
-	Xamarin.Android.Arch.Lifecycle.Runtime
-	Xamarin.Android.FSharp.ResourceProvider
-	Xamarin.Android.Support.Animated.Vector.Drawable
-	Xamarin.Android.Support.Annotations
-	Xamarin.Android.Support.Compat
-	Xamarin.Android.Support.Core.UI
-	Xamarin.Android.Support.Core.Utils
-	Xamarin.Android.Support.CustomTabs
-	Xamarin.Android.Support.Design
-	Xamarin.Android.Support.Fragment
-	Xamarin.Android.Support.Media.Compat
-	Xamarin.Android.Support.Transition
-	Xamarin.Android.Support.v4
-	Xamarin.Android.Support.v7.AppCompat
-	Xamarin.Android.Support.v7.CardView
-	Xamarin.Android.Support.v7.MediaRouter
-	Xamarin.Android.Support.v7.Palette
-	Xamarin.Android.Support.v7.RecyclerView
-	Xamarin.Android.Support.Vector.Drawable
-	Xamarin.Essentials
-	Xamarin.Forms
+Fabulous.LiveUpdate
+UrhoSharp.Forms
+Xamarin.Android.Arch.Core.Runtime
+Xamarin.Android.FSharp.ResourceProvider
+Xamarin.Essentials
