@@ -1,0 +1,4 @@
+group iosapp
+Fabulous.LiveUpdate
+UrhoSharp.Forms
+Xamarin.Essentials
