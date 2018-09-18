@@ -77,10 +77,7 @@ module PlanetVisualizerUrhoApp =
         
     let userPan (planet: Node) (delta: IntVector2) =
         planet.RemoveAllActions()
-        if abs(delta.X) > abs(delta.Y) then
-            planet.Rotate(Quaternion(0.f, (float32 -delta.X) / 5.f, 0.f), TransformSpace.World)
-        else
-            planet.Rotate(Quaternion((float32 -delta.Y) / 5.f, 0.f, 0.f), TransformSpace.World)
+        planet.Rotate(Quaternion((float32 -delta.Y) / 5.f, (float32 -delta.X) / 5.f, 0.f), TransformSpace.World)
         
 open PlanetVisualizerUrhoApp
 
