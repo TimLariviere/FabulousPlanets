@@ -7,11 +7,11 @@ GROUP androidapp
 RESTRICTION: == monoandroid9.0
 NUGET
   remote: https://www.nuget.org/api/v2
-    Fabulous.Core (0.21)
+    Fabulous.Core (0.21.1)
       FSharp.Core (>= 4.5.2)
       Xamarin.Forms (>= 3.1.0.697729)
-    Fabulous.LiveUpdate (0.21)
-      Fabulous.Core (>= 0.21 < 0.22)
+    Fabulous.LiveUpdate (0.21.1)
+      Fabulous.Core (>= 0.21.1 < 0.22)
       FSharp.Core (>= 4.5.2)
       Newtonsoft.Json (>= 11.0.2)
       Xamarin.Forms (>= 3.1.0.697729)
@@ -107,11 +107,11 @@ GROUP iosapp
 RESTRICTION: == xamarinios
 NUGET
   remote: https://www.nuget.org/api/v2
-    Fabulous.Core (0.21)
+    Fabulous.Core (0.21.1)
       FSharp.Core (>= 4.5.2)
       Xamarin.Forms (>= 3.1.0.697729)
-    Fabulous.LiveUpdate (0.21)
-      Fabulous.Core (>= 0.21 < 0.22)
+    Fabulous.LiveUpdate (0.21.1)
+      Fabulous.Core (>= 0.21.1 < 0.22)
       FSharp.Core (>= 4.5.2)
       Newtonsoft.Json (>= 11.0.2)
       Xamarin.Forms (>= 3.1.0.697729)
@@ -128,11 +128,11 @@ GROUP neutral
 RESTRICTION: == netstandard2.0
 NUGET
   remote: https://www.nuget.org/api/v2
-    Fabulous.Core (0.21)
+    Fabulous.Core (0.21.1)
       FSharp.Core (>= 4.5.2)
       Xamarin.Forms (>= 3.1.0.697729)
-    Fabulous.LiveUpdate (0.21)
-      Fabulous.Core (>= 0.21 < 0.22)
+    Fabulous.LiveUpdate (0.21.1)
+      Fabulous.Core (>= 0.21.1 < 0.22)
       FSharp.Core (>= 4.5.2)
       Newtonsoft.Json (>= 11.0.2)
       Xamarin.Forms (>= 3.1.0.697729)

@@ -6,7 +6,7 @@ nuget FAKE 5.3.0
 group neutral
   framework netstandard2.0
   source https://www.nuget.org/api/v2
-  nuget Fabulous.LiveUpdate 0.21.0 prerelease
+  nuget Fabulous.LiveUpdate 0.21.1 prerelease
   nuget Xamarin.Essentials 0.10.0-preview prerelease
   nuget UrhoSharp.Forms 1.8.93
 
@@ -15,7 +15,7 @@ group neutral
 group androidapp
   framework monoandroid9.0
   source https://www.nuget.org/api/v2
-  nuget Fabulous.LiveUpdate 0.21.0 prerelease
+  nuget Fabulous.LiveUpdate 0.21.1 prerelease
   nuget Xamarin.Essentials 0.10.0-preview prerelease
   nuget UrhoSharp.Forms 1.8.93
   nuget Xamarin.Android.FSharp.ResourceProvider 1.0.0.25
@@ -26,6 +26,6 @@ group androidapp
 group iosapp
   framework xamarinios
   source https://www.nuget.org/api/v2
-  nuget Fabulous.LiveUpdate 0.21.0 prerelease
+  nuget Fabulous.LiveUpdate 0.21.1 prerelease
   nuget Xamarin.Essentials 0.10.0-preview prerelease
   nuget UrhoSharp.Forms 1.8.93
