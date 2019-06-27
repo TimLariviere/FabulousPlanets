@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{22C64A
 		paket.dependencies = paket.dependencies
 	EndProjectSection
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "ElmishPlanets", "ElmishPlanets\ElmishPlanets.fsproj", "{AFC7A38E-7586-4121-A411-B4C849A0125E}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FabPlanets", "FabPlanets\FabPlanets.fsproj", "{AFC7A38E-7586-4121-A411-B4C849A0125E}"
 EndProject
 
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ElmishPlanets.Android", "ElmishPlanets.Android\ElmishPlanets.Android.fsproj", "{58A0C07B-DBFD-4313-9CEB-D79D760D4C7B}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FabPlanets.Android", "FabPlanets.Android\FabPlanets.Android.fsproj", "{58A0C07B-DBFD-4313-9CEB-D79D760D4C7B}"
 EndProject
 
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ElmishPlanets.iOS", "ElmishPlanets.iOS\ElmishPlanets.iOS.fsproj", "{2908C674-F809-4FD8-AC3B-DB864831C86C}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FabPlanets.iOS", "FabPlanets.iOS\FabPlanets.iOS.fsproj", "{2908C674-F809-4FD8-AC3B-DB864831C86C}"
 EndProject
 
 

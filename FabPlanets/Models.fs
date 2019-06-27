@@ -1,4 +1,4 @@
-﻿namespace ElmishPlanets
+﻿namespace FabPlanets
 
 module Models =
     [<Measure>] type km

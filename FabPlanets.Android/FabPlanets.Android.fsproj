@@ -7,8 +7,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
     <ProjectGuid>{58A0C07B-DBFD-4313-9CEB-D79D760D4C7B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ElmishPlanets.Android</RootNamespace>
-    <AssemblyName>ElmishPlanets.Android</AssemblyName>
+    <RootNamespace>FabPlanets.Android</RootNamespace>
+    <AssemblyName>FabPlanets.Android</AssemblyName>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <AndroidApplication>True</AndroidApplication>
@@ -18,12 +18,12 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
-    <Name>ElmishPlanets.Android</Name>
+    <Name>FabPlanets.Android</Name>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <OtherFlags>/warnon:1182</OtherFlags>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <SelectedDevice>Samsung SM-G955F</SelectedDevice>
+    <SelectedDevice>Android_Accelerated_x86_Oreo</SelectedDevice>
     <DefaultDevice>Android_Accelerated_x86_Oreo</DefaultDevice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -403,9 +403,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="Java.Interop" />
-    <ProjectReference Include="..\ElmishPlanets\ElmishPlanets.fsproj">
+    <ProjectReference Include="..\FabPlanets\FabPlanets.fsproj">
       <Project>{AFC7A38E-7586-4121-A411-B4C849A0125E}</Project>
-      <Name>ElmishPlanets</Name>
+      <Name>FabPlanets</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

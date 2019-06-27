@@ -1,4 +1,4 @@
-﻿namespace ElmishPlanets
+﻿namespace FabPlanets
 
 open Models
 open Styles

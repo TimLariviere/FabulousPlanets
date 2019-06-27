@@ -1,4 +1,4 @@
-﻿namespace ElmishPlanets
+﻿namespace FabPlanets
 
 open Fabulous.DynamicViews
 open Xamarin.Forms

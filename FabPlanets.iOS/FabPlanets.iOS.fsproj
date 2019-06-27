@@ -10,9 +10,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ElmishPlanets.iOS</RootNamespace>
+    <RootNamespace>FabPlanets.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>ElmishPlanets.iOS</AssemblyName>
+    <AssemblyName>FabPlanets.iOS</AssemblyName>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <SelectedDevice>iPhone 8 iOS 11.4</SelectedDevice>
@@ -218,9 +218,9 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
     <Reference Include="Xamarin.iOS" />
-    <ProjectReference Include="..\ElmishPlanets\ElmishPlanets.fsproj">
+    <ProjectReference Include="..\FabPlanets\FabPlanets.fsproj">
       <Project>{AFC7A38E-7586-4121-A411-B4C849A0125E}</Project>
-      <Name>ElmishPlanets</Name>
+      <Name>FabPlanets</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
