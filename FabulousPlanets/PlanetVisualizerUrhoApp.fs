@@ -1,4 +1,4 @@
-namespace FabPlanets
+namespace FabulousPlanets
 
 open Urho
 open Urho.Actions

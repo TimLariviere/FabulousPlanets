@@ -1,5 +1,5 @@
 ﻿// Copyright 2018 Elmish.XamarinForms contributors. See LICENSE.md for license.
-namespace FabPlanets.iOS
+namespace FabulousPlanets.iOS
 
 open System
 open UIKit
@@ -13,7 +13,7 @@ type AppDelegate () =
 
     override this.FinishedLaunching (app, options) =
         Forms.Init()
-        let appcore = new FabPlanets.App()
+        let appcore = new FabulousPlanets.App()
         this.LoadApplication (appcore)
         base.FinishedLaunching(app, options)
 

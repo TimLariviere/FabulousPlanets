@@ -1,4 +1,4 @@
-﻿namespace FabPlanets
+﻿namespace FabulousPlanets
 
 module Models =
     [<Measure>] type km

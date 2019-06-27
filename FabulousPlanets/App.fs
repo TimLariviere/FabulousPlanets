@@ -1,4 +1,4 @@
-﻿namespace FabPlanets
+﻿namespace FabulousPlanets
 
 open Models
 open Styles
