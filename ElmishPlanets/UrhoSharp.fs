@@ -41,7 +41,7 @@ module UrhoSharpExtensions =
             let attribCount = match created with Some _ -> attribCount + 1 | None -> attribCount
 
             let attribs = 
-                View.BuildView(attribCount, ?horizontalOptions=horizontalOptions, ?verticalOptions=verticalOptions, 
+                ViewBuilders.BuildView(attribCount, ?horizontalOptions=horizontalOptions, ?verticalOptions=verticalOptions, 
                                ?margin=margin, ?gestureRecognizers=gestureRecognizers, ?anchorX=anchorX, ?anchorY=anchorY, 
                                ?backgroundColor=backgroundColor, ?heightRequest=heightRequest, ?inputTransparent=inputTransparent, 
                                ?isEnabled=isEnabled, ?isVisible=isVisible, ?minimumHeightRequest=minimumHeightRequest,
@@ -64,7 +64,7 @@ module UrhoSharpExtensions =
                 updateAsync |> Async.StartImmediate
 
             let update (prevOpt: ViewElement voption) (source: ViewElement) (target: UrhoSurface) =
-                View.UpdateView (prevOpt, source, target)
+                ViewBuilders.UpdateView (prevOpt, source, target)
                 source.UpdatePrimitive(prevOpt, target, OptionsAttribKey, updateApplicationOptions)
 
             ViewElement.Create(UrhoSurface, update, attribs)

@@ -114,12 +114,10 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <PropertyGroup>
-        <__paket__Xamarin_Forms_props>netstandard2.0\Xamarin.Forms</__paket__Xamarin_Forms_props>
-        <__paket__Xamarin_Forms_targets>netstandard2.0\Xamarin.Forms</__paket__Xamarin_Forms_targets>
+        <__paket__UrhoSharp_Forms_targets>xamarin.ios10\UrhoSharp.Forms</__paket__UrhoSharp_Forms_targets>
       </PropertyGroup>
     </When>
   </Choose>
-  <Import Project="..\packages\iosapp\Xamarin.Forms\build\$(__paket__Xamarin_Forms_props).props" Condition="Exists('..\packages\iosapp\Xamarin.Forms\build\$(__paket__Xamarin_Forms_props).props')" Label="Paket" />
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.fs" />
     <BundleResource Include="Resources\Data\Materials\Earth.xml" />
@@ -239,6 +237,17 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <ItemGroup>
+        <Reference Include="Fabulous.CustomControls">
+          <HintPath>..\packages\iosapp\Fabulous.CustomControls\lib\netstandard2.0\Fabulous.CustomControls.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
+      <ItemGroup>
         <Reference Include="Fabulous.LiveUpdate">
           <HintPath>..\packages\iosapp\Fabulous.LiveUpdate\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
           <Private>True</Private>
@@ -272,8 +281,8 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <ItemGroup>
-        <Reference Include="Urho.Forms">
-          <HintPath>..\packages\iosapp\UrhoSharp.Forms\lib\Xamarin.iOS10\Urho.Forms.dll</HintPath>
+        <Reference Include="UrhoSharp.Forms">
+          <HintPath>..\packages\iosapp\UrhoSharp.Forms\lib\Xamarin.iOS10\UrhoSharp.Forms.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -283,6 +292,9 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <ItemGroup>
+        <Reference Include="OpenTK-1.0">
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="Xamarin.Essentials">
           <HintPath>..\packages\iosapp\Xamarin.Essentials\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
           <Private>True</Private>
@@ -317,5 +329,5 @@
       </ItemGroup>
     </When>
   </Choose>
-  <Import Project="..\packages\iosapp\Xamarin.Forms\build\$(__paket__Xamarin_Forms_targets).targets" Condition="Exists('..\packages\iosapp\Xamarin.Forms\build\$(__paket__Xamarin_Forms_targets).targets')" Label="Paket" />
+  <Import Project="..\packages\iosapp\UrhoSharp.Forms\build\$(__paket__UrhoSharp_Forms_targets).targets" Condition="Exists('..\packages\iosapp\UrhoSharp.Forms\build\$(__paket__UrhoSharp_Forms_targets).targets')" Label="Paket" />
 </Project>
