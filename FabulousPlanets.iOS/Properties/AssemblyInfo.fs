@@ -1,4 +1,4 @@
-﻿namespace ElmishPlanets.iOS
+﻿namespace FabulousPlanets.iOS
 
 open System.Reflection
 open System.Runtime.CompilerServices
@@ -7,11 +7,11 @@ open System.Runtime.InteropServices
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[<assembly: AssemblyTitle("ElmishPlanets.iOS")>]
+[<assembly: AssemblyTitle("FabulousPlanets.iOS")>]
 [<assembly: AssemblyDescription("")>]
 [<assembly: AssemblyConfiguration("")>]
 [<assembly: AssemblyCompany("")>]
-[<assembly: AssemblyProduct("ElmishPlanets.iOS")>]
+[<assembly: AssemblyProduct("FabulousPlanets.iOS")>]
 [<assembly: AssemblyCopyright("Copyright ©  2014")>]
 [<assembly: AssemblyTrademark("")>]
 [<assembly: AssemblyCulture("")>]

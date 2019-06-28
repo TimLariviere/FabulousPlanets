@@ -1,4 +1,4 @@
-namespace ElmishPlanets
+namespace FabulousPlanets
 
 open Urho
 open Urho.Actions

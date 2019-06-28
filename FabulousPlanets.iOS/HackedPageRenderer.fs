@@ -1,4 +1,4 @@
-﻿namespace ElmishPlanets.iOS
+﻿namespace FabulousPlanets.iOS
 
 open System.Reflection
 open Xamarin.Forms
