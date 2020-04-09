@@ -95,25 +95,28 @@ type PlanetVisualizerUrhoApp(options: ApplicationOptions) =
         base.Start()
 
     override this.OnUpdate timeStep =
-        match planetNode with
-        | None -> ()
-        | Some planet ->
-            match this.Input.NumTouches with
-            | 0u ->
-                // Check if we should resume the animation
-                let remainingTime = waitTimeBeforeResumeAnimation
-                match remainingTime, (computeRemainingTime remainingTime timeStep) with
-                | Some _, Some newTime ->
-                    waitTimeBeforeResumeAnimation <- Some newTime
-                | Some _, None ->
-                    waitTimeBeforeResumeAnimation <- None
-                    resumeAnimation planet axialTilt rotationSpeed
-                | _ -> ()
-                
-            | _ ->
-                // The user uses 1 finger to pan
-                waitTimeBeforeResumeAnimation <- Some defaultWaitTime
-                userPan planet (this.Input.GetTouch(0u).Delta)
+        if this.IsClosed then
+            ()
+        else
+            match planetNode with
+            | None -> ()
+            | Some planet ->
+                match this.Input.NumTouches with
+                | 0u ->
+                    // Check if we should resume the animation
+                    let remainingTime = waitTimeBeforeResumeAnimation
+                    match remainingTime, (computeRemainingTime remainingTime timeStep) with
+                    | Some _, Some newTime ->
+                        waitTimeBeforeResumeAnimation <- Some newTime
+                    | Some _, None ->
+                        waitTimeBeforeResumeAnimation <- None
+                        resumeAnimation planet axialTilt rotationSpeed
+                    | _ -> ()
+                    
+                | _ ->
+                    // The user uses 1 finger to pan
+                    waitTimeBeforeResumeAnimation <- Some defaultWaitTime
+                    userPan planet (this.Input.GetTouch(0u).Delta)
 
     member this.LoadPlanet (planet: Planet) =
         rotationSpeed <- computeRotationSpeed planet

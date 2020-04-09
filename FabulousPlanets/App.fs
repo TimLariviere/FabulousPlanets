@@ -2,82 +2,91 @@
 
 open Models
 open Styles
-open Fabulous.Core
-open Fabulous.DynamicViews
+open Fabulous
+open Fabulous.XamarinForms
+open Fabulous.XamarinForms.LiveUpdate
 open Xamarin.Forms.PlatformConfiguration
 open Xamarin.Forms.PlatformConfiguration.iOSSpecific
 open Xamarin.Forms
 
 module App =
-
     type Model =
         { CardPageModel: CardPage.Model option }
 
     type Msg =
         | CardPageMsg of CardPage.Msg
-        | SelectPlanet of int
+        | SelectPlanet of Planet
 
     let init () = 
-        { CardPageModel = None }, Cmd.none
+        { CardPageModel = None }
 
     let update (msg: Msg) (model: Model) =
         match msg with
         | CardPageMsg msg ->
-            let m, cmd, externalMsg = CardPage.update msg model.CardPageModel.Value
+            let newModel = CardPage.update msg model.CardPageModel.Value
+            { model with CardPageModel = Some newModel }
 
-            let cmd2 =
-                match externalMsg with
-                | CardPage.ExternalMsg.NoOp -> Cmd.none
-
-            { model with CardPageModel = Some m }, Cmd.batch [ Cmd.map CardPageMsg cmd; cmd2 ]
-
-        | SelectPlanet i ->
-            let cardPageModel = CardPage.init solarObjects.[i]
-            { model with CardPageModel = Some cardPageModel }, Cmd.none
+        | SelectPlanet planet ->
+            let cardPageModel = CardPage.init planet
+            { model with CardPageModel = Some cardPageModel }
 
     let view (model: Model) dispatch =
+        let onNavigationPageAppearing () =
+            NavigationPage.SetPrefersLargeTitles(Xamarin.Forms.Application.Current.MainPage, true)
+            
+        let onMainPageCreated (page: BindableObject) =
+            Page.SetUseSafeArea(page, false)
+            
+        let onSelectionChanged (args: SelectionChangedEventArgs) =
+            let data = args.CurrentSelection.[0] :?> ViewElementHolder
+            let selectedPlanet = data.ViewElement.GetAttributeKeyed(ViewAttributes.TagAttribKey) :?> Planet
+            dispatch (SelectPlanet selectedPlanet)
+        
         let mainPage =
             View.ContentPage(
-                title="Choose a planet",
-                backgroundColor=Color.Black,
-                content=View.Grid(
-                    padding=Thickness(20., 10.),
-                    coldefs=[ "*"; "*" ],
-                    rowdefs=[ "*"; "*"; "*"; "*" ],
-                    children=[
-                        for i in 0 .. 1 .. (solarObjects.Length - 1) do
-                            yield View.Grid(
-                                padding=10.,
-                                verticalOptions=LayoutOptions.Fill,
-                                horizontalOptions=LayoutOptions.Fill,
-                                gestureRecognizers=[ View.TapGestureRecognizer(command=(fun () -> dispatch (SelectPlanet i))) ],
-                                children=[
-                                    View.Image(source=solarObjects.[i].Info.Name + ".jpg")
-                                    View.Label(text=solarObjects.[i].Info.Name, horizontalTextAlignment=TextAlignment.Center, verticalOptions=LayoutOptions.End).WhiteText()
+                created = onMainPageCreated,
+                title = "Choose a planet",
+                backgroundColor = Color.Black,
+                content = View.CollectionView(
+                    margin = Thickness(20., 0.),
+                    selectionMode = SelectionMode.Single,
+                    selectionChanged = onSelectionChanged,
+                    itemsLayout = GridItemsLayout(2, ItemsLayoutOrientation.Vertical, VerticalItemSpacing = 15.),
+                    items = [
+                        for solarObject in solarObjects do
+                            yield View.StackLayout(
+                                tag = solarObject,
+                                children = [
+                                    View.Image(
+                                        source = Path (solarObject.Info.Name.ToLower() + ".jpg")
+                                    )
+                                    View.Label(
+                                        text = solarObject.Info.Name,
+                                        horizontalTextAlignment = TextAlignment.Center,
+                                        verticalOptions = LayoutOptions.End
+                                    ).WhiteText()
                                 ]
-                            ).GridColumn(i % 2)
-                             .GridRow(i / 2)
+                            )
                     ]
                 )
             )
 
         let planetPage =
-            match model.CardPageModel with
-            | None -> None
-            | Some model -> Some (CardPage.view model (CardPageMsg >> dispatch))
+            model.CardPageModel
+            |> Option.map (fun m -> CardPage.view m (CardPageMsg >> dispatch))
 
         View.NavigationPage(
-            appearing=(fun() -> (Xamarin.Forms.Application.Current.MainPage :?> Xamarin.Forms.NavigationPage).On<iOS>().SetPrefersLargeTitles(true) |> ignore),
-            barBackgroundColor=Color.Black,
-            barTextColor=Color.White,
-            backgroundColor=Color.Black,
-            pages=[
+            appearing = onNavigationPageAppearing,
+            barBackgroundColor = Color.Black,
+            barTextColor = Color.White,
+            backgroundColor = Color.Black,
+            pages = [
                 yield mainPage
                 match planetPage with None -> () | Some p -> yield p
             ]
         )
 
-    let program = Program.mkProgram init update view
+    let program = Program.mkSimple init update view
 
 type App () as app = 
     inherit Xamarin.Forms.Application ()
@@ -87,7 +96,7 @@ type App () as app =
 #if DEBUG
         |> Program.withConsoleTrace
 #endif
-        |> Program.runWithDynamicView app
+        |> XamarinFormsProgram.run app
 
 #if DEBUG
     do runner.EnableLiveUpdate()

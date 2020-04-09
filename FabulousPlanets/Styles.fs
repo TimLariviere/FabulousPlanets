@@ -1,8 +1,8 @@
 ﻿namespace FabulousPlanets
 
-open Fabulous.DynamicViews
+open Fabulous.XamarinForms
 open Xamarin.Forms
 
 module Styles =
-    type Fabulous.DynamicViews.ViewElement with
+    type Fabulous.ViewElement with
         member this.WhiteText() = this.TextColor(Color.White)

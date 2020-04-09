@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>FabulousPlanets.Android</RootNamespace>
     <AssemblyName>FabulousPlanets.Android</AssemblyName>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
@@ -37,10 +37,6 @@
     <ConsolePause>False</ConsolePause>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AndroidSupportedAbis>x86;arm64-v8a;x86_64</AndroidSupportedAbis>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
     <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -54,273 +50,252 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_ViewPager_targets>monoandroid90\Xamarin.Android.Support.ViewPager</__paket__Xamarin_Android_Support_ViewPager_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_VersionedParcelable_targets>monoandroid90\Xamarin.Android.Support.VersionedParcelable</__paket__Xamarin_Android_Support_VersionedParcelable_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Vector_Drawable_targets>monoandroid90\Xamarin.Android.Support.Vector.Drawable</__paket__Xamarin_Android_Support_Vector_Drawable_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_v7_RecyclerView_targets>monoandroid90\Xamarin.Android.Support.v7.RecyclerView</__paket__Xamarin_Android_Support_v7_RecyclerView_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
-      <PropertyGroup>
-        <__paket__Xamarin_Android_Support_v7_Palette_targets>monoandroid90\Xamarin.Android.Support.v7.Palette</__paket__Xamarin_Android_Support_v7_Palette_targets>
-      </PropertyGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
-      <PropertyGroup>
-        <__paket__Xamarin_Android_Support_v7_MediaRouter_targets>monoandroid90\Xamarin.Android.Support.v7.MediaRouter</__paket__Xamarin_Android_Support_v7_MediaRouter_targets>
-      </PropertyGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_v7_CardView_targets>monoandroid90\Xamarin.Android.Support.v7.CardView</__paket__Xamarin_Android_Support_v7_CardView_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_v7_AppCompat_targets>monoandroid90\Xamarin.Android.Support.v7.AppCompat</__paket__Xamarin_Android_Support_v7_AppCompat_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
-      <PropertyGroup>
-        <__paket__Xamarin_Android_Support_v4_targets>monoandroid90\Xamarin.Android.Support.v4</__paket__Xamarin_Android_Support_v4_targets>
-      </PropertyGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Transition_targets>monoandroid90\Xamarin.Android.Support.Transition</__paket__Xamarin_Android_Support_Transition_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_SwipeRefreshLayout_targets>monoandroid90\Xamarin.Android.Support.SwipeRefreshLayout</__paket__Xamarin_Android_Support_SwipeRefreshLayout_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_SlidingPaneLayout_targets>monoandroid90\Xamarin.Android.Support.SlidingPaneLayout</__paket__Xamarin_Android_Support_SlidingPaneLayout_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Print_targets>monoandroid90\Xamarin.Android.Support.Print</__paket__Xamarin_Android_Support_Print_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Media_Compat_targets>monoandroid90\Xamarin.Android.Support.Media.Compat</__paket__Xamarin_Android_Support_Media_Compat_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_LocalBroadcastManager_targets>monoandroid90\Xamarin.Android.Support.LocalBroadcastManager</__paket__Xamarin_Android_Support_LocalBroadcastManager_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Loader_targets>monoandroid90\Xamarin.Android.Support.Loader</__paket__Xamarin_Android_Support_Loader_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Interpolator_targets>monoandroid90\Xamarin.Android.Support.Interpolator</__paket__Xamarin_Android_Support_Interpolator_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Fragment_targets>monoandroid90\Xamarin.Android.Support.Fragment</__paket__Xamarin_Android_Support_Fragment_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_DrawerLayout_targets>monoandroid90\Xamarin.Android.Support.DrawerLayout</__paket__Xamarin_Android_Support_DrawerLayout_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_DocumentFile_targets>monoandroid90\Xamarin.Android.Support.DocumentFile</__paket__Xamarin_Android_Support_DocumentFile_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Design_targets>monoandroid90\Xamarin.Android.Support.Design</__paket__Xamarin_Android_Support_Design_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_CustomView_targets>monoandroid90\Xamarin.Android.Support.CustomView</__paket__Xamarin_Android_Support_CustomView_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_CustomTabs_targets>monoandroid90\Xamarin.Android.Support.CustomTabs</__paket__Xamarin_Android_Support_CustomTabs_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_CursorAdapter_targets>monoandroid90\Xamarin.Android.Support.CursorAdapter</__paket__Xamarin_Android_Support_CursorAdapter_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Core_Utils_targets>monoandroid90\Xamarin.Android.Support.Core.Utils</__paket__Xamarin_Android_Support_Core_Utils_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Core_UI_targets>monoandroid90\Xamarin.Android.Support.Core.UI</__paket__Xamarin_Android_Support_Core_UI_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_CoordinaterLayout_targets>monoandroid90\Xamarin.Android.Support.CoordinaterLayout</__paket__Xamarin_Android_Support_CoordinaterLayout_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Compat_targets>monoandroid90\Xamarin.Android.Support.Compat</__paket__Xamarin_Android_Support_Compat_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Collections_targets>monoandroid90\Xamarin.Android.Support.Collections</__paket__Xamarin_Android_Support_Collections_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_AsyncLayoutInflater_targets>monoandroid90\Xamarin.Android.Support.AsyncLayoutInflater</__paket__Xamarin_Android_Support_AsyncLayoutInflater_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Annotations_targets>monoandroid90\Xamarin.Android.Support.Annotations</__paket__Xamarin_Android_Support_Annotations_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Support_Animated_Vector_Drawable_targets>monoandroid90\Xamarin.Android.Support.Animated.Vector.Drawable</__paket__Xamarin_Android_Support_Animated_Vector_Drawable_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Arch_Lifecycle_ViewModel_targets>monoandroid90\Xamarin.Android.Arch.Lifecycle.ViewModel</__paket__Xamarin_Android_Arch_Lifecycle_ViewModel_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Arch_Lifecycle_Runtime_targets>monoandroid90\Xamarin.Android.Arch.Lifecycle.Runtime</__paket__Xamarin_Android_Arch_Lifecycle_Runtime_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Arch_Lifecycle_LiveData_Core_targets>monoandroid90\Xamarin.Android.Arch.Lifecycle.LiveData.Core</__paket__Xamarin_Android_Arch_Lifecycle_LiveData_Core_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Arch_Lifecycle_LiveData_targets>monoandroid90\Xamarin.Android.Arch.Lifecycle.LiveData</__paket__Xamarin_Android_Arch_Lifecycle_LiveData_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Arch_Lifecycle_Common_targets>monoandroid90\Xamarin.Android.Arch.Lifecycle.Common</__paket__Xamarin_Android_Arch_Lifecycle_Common_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Arch_Core_Runtime_targets>monoandroid90\Xamarin.Android.Arch.Core.Runtime</__paket__Xamarin_Android_Arch_Core_Runtime_targets>
       </PropertyGroup>
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <PropertyGroup>
         <__paket__Xamarin_Android_Arch_Core_Common_targets>monoandroid90\Xamarin.Android.Arch.Core.Common</__paket__Xamarin_Android_Arch_Core_Common_targets>
       </PropertyGroup>
@@ -365,30 +340,27 @@
     <AndroidAsset Include="Assets\Data\Textures\uranus_texture.jpg" />
     <AndroidAsset Include="Assets\Data\Textures\venus_texture.jpg" />
     <None Include="Resources\AboutResources.txt" />
-    <AndroidResource Include="Resources\drawable\Earth.jpg" />
-    <AndroidResource Include="Resources\drawable\Jupiter.jpg" />
-    <AndroidResource Include="Resources\drawable\Mars.jpg" />
-    <AndroidResource Include="Resources\drawable\Mercury.jpg" />
-    <AndroidResource Include="Resources\drawable\Neptune.jpg" />
-    <AndroidResource Include="Resources\drawable\Saturn.jpg" />
-    <AndroidResource Include="Resources\drawable\Uranus.jpg" />
-    <AndroidResource Include="Resources\drawable\Venus.jpg" />
-    <AndroidResource Include="Resources\layout\Tabbar.axml" />
-    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\drawable\earth.jpg" />
+    <AndroidResource Include="Resources\drawable\jupiter.jpg" />
+    <AndroidResource Include="Resources\drawable\mars.jpg" />
+    <AndroidResource Include="Resources\drawable\mercury.jpg" />
+    <AndroidResource Include="Resources\drawable\neptune.jpg" />
+    <AndroidResource Include="Resources\drawable\saturn.jpg" />
+    <AndroidResource Include="Resources\drawable\uranus.jpg" />
+    <AndroidResource Include="Resources\drawable\venus.jpg" />
+    <AndroidResource Include="Resources\drawable\Icon.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\launcher_foreground.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
     <AndroidResource Include="Resources\values\styles.xml" />
-    <AndroidResource Include="Resources\values\colors.xml" />
-    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
-    <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-hdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\values\colors.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
     <Compile Include="MainActivity.fs" />
     <None Include="paket.references" />
     <None Include="packages.config" />
@@ -409,10 +381,10 @@
     </ProjectReference>
   </ItemGroup>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
-        <Reference Include="Fabulous.Core">
-          <HintPath>..\packages\androidapp\Fabulous.Core\lib\netstandard2.0\Fabulous.Core.dll</HintPath>
+        <Reference Include="Fabulous">
+          <HintPath>..\packages\androidapp\Fabulous\lib\netstandard2.0\Fabulous.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -420,18 +392,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
-      <ItemGroup>
-        <Reference Include="Fabulous.CustomControls">
-          <HintPath>..\packages\androidapp\Fabulous.CustomControls\lib\netstandard2.0\Fabulous.CustomControls.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Fabulous.LiveUpdate">
           <HintPath>..\packages\androidapp\Fabulous.LiveUpdate\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
@@ -442,10 +403,10 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
-        <Reference Include="FSharp.Core">
-          <HintPath>..\packages\androidapp\FSharp.Core\lib\netstandard1.6\FSharp.Core.dll</HintPath>
+        <Reference Include="Fabulous.XamarinForms">
+          <HintPath>..\packages\androidapp\Fabulous.XamarinForms\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -453,7 +414,29 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
+      <ItemGroup>
+        <Reference Include="Fabulous.XamarinForms.LiveUpdate">
+          <HintPath>..\packages\androidapp\Fabulous.XamarinForms.LiveUpdate\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
+      <ItemGroup>
+        <Reference Include="FSharp.Core">
+          <HintPath>..\packages\androidapp\FSharp.Core\lib\netstandard2.0\FSharp.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Newtonsoft.Json">
           <HintPath>..\packages\androidapp\Newtonsoft.Json\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
@@ -464,7 +447,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Urho.Droid.SdlBinding">
           <HintPath>..\packages\androidapp\UrhoSharp.Forms\lib\monoandroid81\Urho.Droid.SdlBinding.dll</HintPath>
@@ -480,7 +463,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Arch.Core.Common">
           <HintPath>..\packages\androidapp\Xamarin.Android.Arch.Core.Common\lib\monoandroid90\Xamarin.Android.Arch.Core.Common.dll</HintPath>
@@ -491,7 +474,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Arch.Core.Runtime">
           <HintPath>..\packages\androidapp\Xamarin.Android.Arch.Core.Runtime\lib\monoandroid90\Xamarin.Android.Arch.Core.Runtime.dll</HintPath>
@@ -502,7 +485,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Arch.Lifecycle.Common">
           <HintPath>..\packages\androidapp\Xamarin.Android.Arch.Lifecycle.Common\lib\monoandroid90\Xamarin.Android.Arch.Lifecycle.Common.dll</HintPath>
@@ -513,7 +496,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Arch.Lifecycle.LiveData">
           <HintPath>..\packages\androidapp\Xamarin.Android.Arch.Lifecycle.LiveData\lib\monoandroid90\Xamarin.Android.Arch.Lifecycle.LiveData.dll</HintPath>
@@ -524,7 +507,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Arch.Lifecycle.LiveData.Core">
           <HintPath>..\packages\androidapp\Xamarin.Android.Arch.Lifecycle.LiveData.Core\lib\monoandroid90\Xamarin.Android.Arch.Lifecycle.LiveData.Core.dll</HintPath>
@@ -535,7 +518,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Arch.Lifecycle.Runtime">
           <HintPath>..\packages\androidapp\Xamarin.Android.Arch.Lifecycle.Runtime\lib\monoandroid90\Xamarin.Android.Arch.Lifecycle.Runtime.dll</HintPath>
@@ -546,7 +529,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Arch.Lifecycle.ViewModel">
           <HintPath>..\packages\androidapp\Xamarin.Android.Arch.Lifecycle.ViewModel\lib\monoandroid90\Xamarin.Android.Arch.Lifecycle.ViewModel.dll</HintPath>
@@ -557,18 +540,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
-      <ItemGroup>
-        <Reference Include="Xamarin.Android.FSharp.ResourceProvider.Runtime">
-          <HintPath>..\packages\androidapp\Xamarin.Android.FSharp.ResourceProvider\lib\monoandroid81\Xamarin.Android.FSharp.ResourceProvider.Runtime.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Animated.Vector.Drawable\lib\monoandroid90\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
@@ -579,7 +551,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Annotations">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Annotations\lib\monoandroid90\Xamarin.Android.Support.Annotations.dll</HintPath>
@@ -590,7 +562,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.AsyncLayoutInflater">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.AsyncLayoutInflater\lib\monoandroid90\Xamarin.Android.Support.AsyncLayoutInflater.dll</HintPath>
@@ -601,7 +573,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Collections">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Collections\lib\monoandroid90\Xamarin.Android.Support.Collections.dll</HintPath>
@@ -612,7 +584,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Compat">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Compat\lib\monoandroid90\Xamarin.Android.Support.Compat.dll</HintPath>
@@ -623,7 +595,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.CoordinaterLayout">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.CoordinaterLayout\lib\monoandroid90\Xamarin.Android.Support.CoordinaterLayout.dll</HintPath>
@@ -634,7 +606,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Core.UI">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Core.UI\lib\monoandroid90\Xamarin.Android.Support.Core.UI.dll</HintPath>
@@ -645,7 +617,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Core.Utils">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Core.Utils\lib\monoandroid90\Xamarin.Android.Support.Core.Utils.dll</HintPath>
@@ -656,7 +628,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.CursorAdapter">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.CursorAdapter\lib\monoandroid90\Xamarin.Android.Support.CursorAdapter.dll</HintPath>
@@ -667,7 +639,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.CustomTabs">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.CustomTabs\lib\monoandroid90\Xamarin.Android.Support.CustomTabs.dll</HintPath>
@@ -678,7 +650,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.CustomView">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.CustomView\lib\monoandroid90\Xamarin.Android.Support.CustomView.dll</HintPath>
@@ -689,7 +661,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Design">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Design\lib\monoandroid90\Xamarin.Android.Support.Design.dll</HintPath>
@@ -700,7 +672,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.DocumentFile">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.DocumentFile\lib\monoandroid90\Xamarin.Android.Support.DocumentFile.dll</HintPath>
@@ -711,7 +683,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.DrawerLayout">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.DrawerLayout\lib\monoandroid90\Xamarin.Android.Support.DrawerLayout.dll</HintPath>
@@ -722,7 +694,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Fragment">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Fragment\lib\monoandroid90\Xamarin.Android.Support.Fragment.dll</HintPath>
@@ -733,7 +705,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Interpolator">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Interpolator\lib\monoandroid90\Xamarin.Android.Support.Interpolator.dll</HintPath>
@@ -744,7 +716,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Loader">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Loader\lib\monoandroid90\Xamarin.Android.Support.Loader.dll</HintPath>
@@ -755,7 +727,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.LocalBroadcastManager">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.LocalBroadcastManager\lib\monoandroid90\Xamarin.Android.Support.LocalBroadcastManager.dll</HintPath>
@@ -766,7 +738,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Media.Compat">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Media.Compat\lib\monoandroid90\Xamarin.Android.Support.Media.Compat.dll</HintPath>
@@ -777,7 +749,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Print">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Print\lib\monoandroid90\Xamarin.Android.Support.Print.dll</HintPath>
@@ -788,7 +760,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.SlidingPaneLayout">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.SlidingPaneLayout\lib\monoandroid90\Xamarin.Android.Support.SlidingPaneLayout.dll</HintPath>
@@ -799,7 +771,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.SwipeRefreshLayout">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.SwipeRefreshLayout\lib\monoandroid90\Xamarin.Android.Support.SwipeRefreshLayout.dll</HintPath>
@@ -810,7 +782,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Transition">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Transition\lib\monoandroid90\Xamarin.Android.Support.Transition.dll</HintPath>
@@ -821,18 +793,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
-      <ItemGroup>
-        <Reference Include="Xamarin.Android.Support.v4">
-          <HintPath>..\packages\androidapp\Xamarin.Android.Support.v4\lib\monoandroid90\Xamarin.Android.Support.v4.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.v7.AppCompat">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.v7.AppCompat\lib\monoandroid90\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
@@ -843,7 +804,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.v7.CardView">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.v7.CardView\lib\monoandroid90\Xamarin.Android.Support.v7.CardView.dll</HintPath>
@@ -854,29 +815,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
-      <ItemGroup>
-        <Reference Include="Xamarin.Android.Support.v7.MediaRouter">
-          <HintPath>..\packages\androidapp\Xamarin.Android.Support.v7.MediaRouter\lib\monoandroid90\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
-      <ItemGroup>
-        <Reference Include="Xamarin.Android.Support.v7.Palette">
-          <HintPath>..\packages\androidapp\Xamarin.Android.Support.v7.Palette\lib\monoandroid90\Xamarin.Android.Support.v7.Palette.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.v7.RecyclerView\lib\monoandroid90\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
@@ -887,7 +826,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.Vector.Drawable">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.Vector.Drawable\lib\monoandroid90\Xamarin.Android.Support.Vector.Drawable.dll</HintPath>
@@ -898,7 +837,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.VersionedParcelable">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.VersionedParcelable\lib\monoandroid90\Xamarin.Android.Support.VersionedParcelable.dll</HintPath>
@@ -909,7 +848,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Android.Support.ViewPager">
           <HintPath>..\packages\androidapp\Xamarin.Android.Support.ViewPager\lib\monoandroid90\Xamarin.Android.Support.ViewPager.dll</HintPath>
@@ -920,7 +859,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="Xamarin.Essentials">
           <HintPath>..\packages\androidapp\Xamarin.Essentials\lib\monoandroid90\Xamarin.Essentials.dll</HintPath>
@@ -931,7 +870,7 @@
     </When>
   </Choose>
   <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v9.0'">
+    <When Condition="$(TargetFrameworkIdentifier) == 'MonoAndroid' And $(TargetFrameworkVersion) == 'v10.0'">
       <ItemGroup>
         <Reference Include="FormsViewGroup">
           <HintPath>..\packages\androidapp\Xamarin.Forms\lib\MonoAndroid90\FormsViewGroup.dll</HintPath>
@@ -991,11 +930,8 @@
   <Import Project="..\packages\androidapp\Xamarin.Android.Support.SlidingPaneLayout\build\$(__paket__Xamarin_Android_Support_SlidingPaneLayout_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.SlidingPaneLayout\build\$(__paket__Xamarin_Android_Support_SlidingPaneLayout_targets).targets')" Label="Paket" />
   <Import Project="..\packages\androidapp\Xamarin.Android.Support.SwipeRefreshLayout\build\$(__paket__Xamarin_Android_Support_SwipeRefreshLayout_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.SwipeRefreshLayout\build\$(__paket__Xamarin_Android_Support_SwipeRefreshLayout_targets).targets')" Label="Paket" />
   <Import Project="..\packages\androidapp\Xamarin.Android.Support.Transition\build\$(__paket__Xamarin_Android_Support_Transition_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.Transition\build\$(__paket__Xamarin_Android_Support_Transition_targets).targets')" Label="Paket" />
-  <Import Project="..\packages\androidapp\Xamarin.Android.Support.v4\build\$(__paket__Xamarin_Android_Support_v4_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.v4\build\$(__paket__Xamarin_Android_Support_v4_targets).targets')" Label="Paket" />
   <Import Project="..\packages\androidapp\Xamarin.Android.Support.v7.AppCompat\build\$(__paket__Xamarin_Android_Support_v7_AppCompat_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.v7.AppCompat\build\$(__paket__Xamarin_Android_Support_v7_AppCompat_targets).targets')" Label="Paket" />
   <Import Project="..\packages\androidapp\Xamarin.Android.Support.v7.CardView\build\$(__paket__Xamarin_Android_Support_v7_CardView_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.v7.CardView\build\$(__paket__Xamarin_Android_Support_v7_CardView_targets).targets')" Label="Paket" />
-  <Import Project="..\packages\androidapp\Xamarin.Android.Support.v7.MediaRouter\build\$(__paket__Xamarin_Android_Support_v7_MediaRouter_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.v7.MediaRouter\build\$(__paket__Xamarin_Android_Support_v7_MediaRouter_targets).targets')" Label="Paket" />
-  <Import Project="..\packages\androidapp\Xamarin.Android.Support.v7.Palette\build\$(__paket__Xamarin_Android_Support_v7_Palette_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.v7.Palette\build\$(__paket__Xamarin_Android_Support_v7_Palette_targets).targets')" Label="Paket" />
   <Import Project="..\packages\androidapp\Xamarin.Android.Support.v7.RecyclerView\build\$(__paket__Xamarin_Android_Support_v7_RecyclerView_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.v7.RecyclerView\build\$(__paket__Xamarin_Android_Support_v7_RecyclerView_targets).targets')" Label="Paket" />
   <Import Project="..\packages\androidapp\Xamarin.Android.Support.Vector.Drawable\build\$(__paket__Xamarin_Android_Support_Vector_Drawable_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.Vector.Drawable\build\$(__paket__Xamarin_Android_Support_Vector_Drawable_targets).targets')" Label="Paket" />
   <Import Project="..\packages\androidapp\Xamarin.Android.Support.VersionedParcelable\build\$(__paket__Xamarin_Android_Support_VersionedParcelable_targets).targets" Condition="Exists('..\packages\androidapp\Xamarin.Android.Support.VersionedParcelable\build\$(__paket__Xamarin_Android_Support_VersionedParcelable_targets).targets')" Label="Paket" />

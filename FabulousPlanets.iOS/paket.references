@@ -1,4 +1,5 @@
 group iosapp
-Fabulous.LiveUpdate
-UrhoSharp.Forms
+Fabulous.XamarinForms 
+Fabulous.XamarinForms.LiveUpdate
 Xamarin.Essentials
+UrhoSharp.Forms

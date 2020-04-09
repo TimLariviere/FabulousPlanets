@@ -6,7 +6,7 @@ open System.Runtime.InteropServices
 open Android.App
 
 // the name of the type here needs to match the name inside the ResourceDesigner attribute
-type Resources = FabulousPlanets.Android.Resource
+//type Resources = FabulousPlanets.Android.Resource // Uncomment if there's resources
 [<assembly: Android.Runtime.ResourceDesigner("FabulousPlanets.Android.Resources", IsApplication=true)>]
 
 // General Information about an assembly is controlled through the following 

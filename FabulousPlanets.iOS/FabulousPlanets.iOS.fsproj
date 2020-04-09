@@ -154,14 +154,14 @@
     <BundleResource Include="Resources\Data\Textures\Uranus_Rings.png" />
     <BundleResource Include="Resources\Data\Textures\uranus_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\venus_texture.jpg" />
-    <BundleResource Include="Resources\Earth.jpg" />
-    <BundleResource Include="Resources\Jupiter.jpg" />
-    <BundleResource Include="Resources\Mars.jpg" />
-    <BundleResource Include="Resources\Mercury.jpg" />
-    <BundleResource Include="Resources\Neptune.jpg" />
-    <BundleResource Include="Resources\Saturn.jpg" />
-    <BundleResource Include="Resources\Uranus.jpg" />
-    <BundleResource Include="Resources\Venus.jpg" />
+    <BundleResource Include="Resources\earth.jpg" />
+    <BundleResource Include="Resources\jupiter.jpg" />
+    <BundleResource Include="Resources\mars.jpg" />
+    <BundleResource Include="Resources\mercury.jpg" />
+    <BundleResource Include="Resources\neptune.jpg" />
+    <BundleResource Include="Resources\saturn.jpg" />
+    <BundleResource Include="Resources\uranus.jpg" />
+    <BundleResource Include="Resources\venus.jpg" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <Compile Include="HackedPageRenderer.fs" />
     <Compile Include="AppDelegate.fs" />
@@ -226,19 +226,8 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <ItemGroup>
-        <Reference Include="Fabulous.Core">
-          <HintPath>..\packages\iosapp\Fabulous.Core\lib\netstandard2.0\Fabulous.Core.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="Fabulous.CustomControls">
-          <HintPath>..\packages\iosapp\Fabulous.CustomControls\lib\netstandard2.0\Fabulous.CustomControls.dll</HintPath>
+        <Reference Include="Fabulous">
+          <HintPath>..\packages\iosapp\Fabulous\lib\netstandard2.0\Fabulous.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -259,8 +248,30 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <ItemGroup>
+        <Reference Include="Fabulous.XamarinForms">
+          <HintPath>..\packages\iosapp\Fabulous.XamarinForms\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
+      <ItemGroup>
+        <Reference Include="Fabulous.XamarinForms.LiveUpdate">
+          <HintPath>..\packages\iosapp\Fabulous.XamarinForms.LiveUpdate\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
+      <ItemGroup>
         <Reference Include="FSharp.Core">
-          <HintPath>..\packages\iosapp\FSharp.Core\lib\netstandard1.6\FSharp.Core.dll</HintPath>
+          <HintPath>..\packages\iosapp\FSharp.Core\lib\netstandard2.0\FSharp.Core.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -293,6 +304,9 @@
     <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
       <ItemGroup>
         <Reference Include="OpenTK-1.0">
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Drawing.Common.dll">
           <Paket>True</Paket>
         </Reference>
         <Reference Include="Xamarin.Essentials">

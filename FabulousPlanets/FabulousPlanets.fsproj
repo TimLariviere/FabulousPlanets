@@ -7,7 +7,6 @@
   <ItemGroup>
     <Compile Include="Styles.fs" />
     <Compile Include="UrhoSharp.fs" />
-    <Compile Include="FabulousExtensions.fs" />
     <Compile Include="Models.fs" />
     <Compile Include="PlanetVisualizerUrhoApp.fs" />
     <Compile Include="CardPage.fs" />
