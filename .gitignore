@@ -327,3 +327,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+.paket/Paket.Restore.targets
+
+FabulousPlanets.Android/Resources/Resource.designer.cs
