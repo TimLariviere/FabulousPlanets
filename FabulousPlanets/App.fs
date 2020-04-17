@@ -58,7 +58,7 @@ module App =
                                 tag = solarObject,
                                 children = [
                                     View.Image(
-                                        source = Path (solarObject.Info.Name.ToLower() + ".jpg")
+                                        source = ImagePath (solarObject.Info.Name.ToLower() + ".jpg")
                                     )
                                     View.Label(
                                         text = solarObject.Info.Name,

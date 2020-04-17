@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="..\packages\iosapp\Xamarin.Forms\build\Xamarin.Forms.props" Condition="Exists('..\packages\iosapp\Xamarin.Forms\build\Xamarin.Forms.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -330,11 +331,6 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
-        <Reference Include="Xamarin.Forms.Platform.iOS">
-          <HintPath>..\packages\iosapp\Xamarin.Forms\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
         <Reference Include="Xamarin.Forms.Xaml">
           <HintPath>..\packages\iosapp\Xamarin.Forms\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
           <Private>True</Private>
@@ -343,5 +339,6 @@
       </ItemGroup>
     </When>
   </Choose>
+  <Import Project="..\packages\iosapp\Xamarin.Forms\build\Xamarin.Forms.targets" Condition="Exists('..\packages\iosapp\Xamarin.Forms\build\Xamarin.Forms.targets')" />
   <Import Project="..\packages\iosapp\UrhoSharp.Forms\build\$(__paket__UrhoSharp_Forms_targets).targets" Condition="Exists('..\packages\iosapp\UrhoSharp.Forms\build\$(__paket__UrhoSharp_Forms_targets).targets')" Label="Paket" />
 </Project>

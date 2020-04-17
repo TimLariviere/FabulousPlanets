@@ -1,4 +1,5 @@
 group androidapp
+FSharp.Core
 Fabulous.XamarinForms 
 Fabulous.XamarinForms.LiveUpdate
 Xamarin.Essentials
