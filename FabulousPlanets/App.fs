@@ -37,10 +37,12 @@ module App =
         let onMainPageCreated (page: BindableObject) =
             Page.SetUseSafeArea(page, false)
             
-        let onSelectionChanged (args: SelectionChangedEventArgs) =
-            let data = args.CurrentSelection.[0] :?> ViewElementHolder
-            let selectedPlanet = data.ViewElement.GetAttributeKeyed(ViewAttributes.TagAttribKey) :?> Planet
-            dispatch (SelectPlanet selectedPlanet)
+        let onSelectionChanged (_, currentItems: ViewElement list option) =
+            match currentItems |> Option.bind (List.tryHead) with
+            | None -> ()
+            | Some item ->
+                let selectedPlanet = item.TryGetTag<Planet>().Value
+                dispatch (SelectPlanet selectedPlanet)
         
         let mainPage =
             View.ContentPage(
