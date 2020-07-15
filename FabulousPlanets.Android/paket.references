@@ -1,9 +1,0 @@
-group androidapp
-FSharp.Core
-Fabulous.XamarinForms 
-Fabulous.XamarinForms.LiveUpdate
-Xamarin.Essentials
-UrhoSharp.Forms
-Xamarin.Android.Support.v7.AppCompat
-Xamarin.Android.Support.Design
-Xamarin.Android.Support.Media.Compat

@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.4.6.0.726\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.4.6.0.726\build\Xamarin.Forms.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="..\packages\iosapp\Xamarin.Forms\build\Xamarin.Forms.props" Condition="Exists('..\packages\iosapp\Xamarin.Forms\build\Xamarin.Forms.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2908C674-F809-4FD8-AC3B-DB864831C86C}</ProjectGuid>
+    <ProjectGuid>{092FC165-8D24-43FE-B840-BFE795FD36AD}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -16,26 +16,6 @@
     <AssemblyName>FabulousPlanets.iOS</AssemblyName>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SelectedDevice>iPhone 8 iOS 11.4</SelectedDevice>
-    <DefaultDevice>iPhone 8 iOS 11.4</DefaultDevice>
-    <TargetiOSDevice>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
-&lt;plist version="1.0"&gt;
-&lt;dict&gt;
-	&lt;key&gt;device&lt;/key&gt;
-	&lt;dict&gt;
-		&lt;key&gt;architecture&lt;/key&gt;
-		&lt;string&gt;ARMv6, ARMv7, ARMv7s, ARM64&lt;/string&gt;
-		&lt;key&gt;model&lt;/key&gt;
-		&lt;string&gt;iPhone7,2&lt;/string&gt;
-		&lt;key&gt;os-version&lt;/key&gt;
-		&lt;string&gt;11.4.1&lt;/string&gt;
-		&lt;key&gt;os&lt;/key&gt;
-		&lt;string&gt;iOS&lt;/string&gt;
-	&lt;/dict&gt;
-&lt;/dict&gt;
-&lt;/plist&gt;
-</TargetiOSDevice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,7 +29,6 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer: Timothé LARIVIERE (8KU3KBCSV8)</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -111,50 +90,50 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.FSharp.targets" Condition="Exists('$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.FSharp.targets')" />
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <PropertyGroup>
-        <__paket__UrhoSharp_Forms_targets>xamarin.ios10\UrhoSharp.Forms</__paket__UrhoSharp_Forms_targets>
-      </PropertyGroup>
-    </When>
-  </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.fs" />
-    <BundleResource Include="Resources\Data\Materials\Earth.xml" />
-    <BundleResource Include="Resources\Data\Materials\Jupiter.xml" />
-    <BundleResource Include="Resources\Data\Materials\JupiterRings.xml" />
-    <BundleResource Include="Resources\Data\Materials\Mars.xml" />
-    <BundleResource Include="Resources\Data\Materials\Mercury.xml" />
-    <BundleResource Include="Resources\Data\Materials\Neptune.xml" />
+    <Compile Include="HackedPageRenderer.fs" />
+    <Compile Include="AppDelegate.fs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\Data\Techniques\EarthTechnique.xml" />
+    <BundleResource Include="Resources\Data\Shaders\GLSL\CustomLitSolid.glsl" />
     <BundleResource Include="Resources\Data\Materials\NeptuneRings.xml" />
     <BundleResource Include="Resources\Data\Materials\Saturn.xml" />
+    <BundleResource Include="Resources\Data\Materials\Mercury.xml" />
+    <BundleResource Include="Resources\Data\Materials\Neptune.xml" />
     <BundleResource Include="Resources\Data\Materials\SaturnRings.xml" />
-    <BundleResource Include="Resources\Data\Materials\Skybox.xml" />
-    <BundleResource Include="Resources\Data\Materials\Uranus.xml" />
+    <BundleResource Include="Resources\Data\Materials\JupiterRings.xml" />
     <BundleResource Include="Resources\Data\Materials\UranusRings.xml" />
+    <BundleResource Include="Resources\Data\Materials\Earth.xml" />
+    <BundleResource Include="Resources\Data\Materials\Skybox.xml" />
+    <BundleResource Include="Resources\Data\Materials\Jupiter.xml" />
+    <BundleResource Include="Resources\Data\Materials\Mars.xml" />
     <BundleResource Include="Resources\Data\Materials\Venus.xml" />
+    <BundleResource Include="Resources\Data\Materials\Uranus.xml" />
     <BundleResource Include="Resources\Data\Scenes\PlanetScene.xml" />
-    <BundleResource Include="Resources\Data\Shaders\GLSL\CustomLitSolid.glsl" />
-    <BundleResource Include="Resources\Data\Techniques\EarthTechnique.xml" />
+    <BundleResource Include="Resources\Data\Textures\venus_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\mercury_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\mars_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\jupiter_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Earth_SpecularMap.png" />
+    <BundleResource Include="Resources\Data\Textures\Saturn_Rings.png" />
+    <BundleResource Include="Resources\Data\Textures\uranus_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\neptune_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\Earth.jpg" />
     <BundleResource Include="Resources\Data\Textures\Earth_Clouds.jpg" />
-    <BundleResource Include="Resources\Data\Textures\Earth_Night.jpg" />
-    <BundleResource Include="Resources\Data\Textures\Earth_NormalsMap.png" />
-    <BundleResource Include="Resources\Data\Textures\Earth_SpecularMap.png" />
-    <BundleResource Include="Resources\Data\Textures\Jupiter_Rings.png" />
-    <BundleResource Include="Resources\Data\Textures\jupiter_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\mars_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\mercury_texture.jpg" />
     <BundleResource Include="Resources\Data\Textures\Neptune_Rings.png" />
-    <BundleResource Include="Resources\Data\Textures\neptune_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\Saturn_Rings.png" />
-    <BundleResource Include="Resources\Data\Textures\saturn_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\Space.png" />
+    <BundleResource Include="Resources\Data\Textures\Earth_NormalsMap.png" />
+    <BundleResource Include="Resources\Data\Textures\Jupiter_Rings.png" />
     <BundleResource Include="Resources\Data\Textures\Skybox.xml" />
+    <BundleResource Include="Resources\Data\Textures\Space.png" />
     <BundleResource Include="Resources\Data\Textures\Uranus_Rings.png" />
-    <BundleResource Include="Resources\Data\Textures\uranus_texture.jpg" />
-    <BundleResource Include="Resources\Data\Textures\venus_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\saturn_texture.jpg" />
+    <BundleResource Include="Resources\Data\Textures\Earth_Night.jpg" />
     <BundleResource Include="Resources\earth.jpg" />
     <BundleResource Include="Resources\jupiter.jpg" />
     <BundleResource Include="Resources\mars.jpg" />
@@ -163,54 +142,16 @@
     <BundleResource Include="Resources\saturn.jpg" />
     <BundleResource Include="Resources\uranus.jpg" />
     <BundleResource Include="Resources\venus.jpg" />
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
-    <Compile Include="HackedPageRenderer.fs" />
-    <Compile Include="AppDelegate.fs" />
-    <None Include="Entitlements.plist" />
-    <None Include="Info.plist" />
-    <None Include="paket.references" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-60x60@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-60x60@3x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-76x76@1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-76x76@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-83.5x83.5@2x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ios-marketing.png" />
+    <Content Include="Assets.xcassets\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -218,127 +159,55 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
+    <Reference Include="UrhoSharp.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\UrhoSharp.Forms.1.9.67\lib\Xamarin.iOS10\UrhoSharp.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.4.6.0.726\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.4.6.0.726\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.4.6.0.726\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.7.1\lib\netstandard2.0\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>..\packages\Xamarin.Essentials.1.5.1\lib\monoandroid71\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="Fabulous">
+      <HintPath>..\packages\Fabulous.0.55.0-preview6\lib\netstandard2.0\Fabulous.dll</HintPath>
+    </Reference>
+    <Reference Include="Fabulous.LiveUpdate">
+      <HintPath>..\packages\Fabulous.LiveUpdate.0.55.0-preview6\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
+    </Reference>
+    <Reference Include="Fabulous.XamarinForms">
+      <HintPath>..\packages\Fabulous.XamarinForms.0.55.0-preview6\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Fabulous.XamarinForms.LiveUpdate">
+      <HintPath>..\packages\Fabulous.XamarinForms.LiveUpdate.0.55.0-preview6\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.FSharp.targets" Condition="Exists('$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.FSharp.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.4.6.0.726\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.4.6.0.726\build\Xamarin.Forms.targets')" />
+  <ItemGroup>
     <ProjectReference Include="..\FabulousPlanets\FabulousPlanets.fsproj">
-      <Project>{AFC7A38E-7586-4121-A411-B4C849A0125E}</Project>
+      <Project>{D29C53E9-E5F0-4464-AEA7-65F84773428F}</Project>
       <Name>FabulousPlanets</Name>
     </ProjectReference>
   </ItemGroup>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="Fabulous">
-          <HintPath>..\packages\iosapp\Fabulous\lib\netstandard2.0\Fabulous.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="Fabulous.LiveUpdate">
-          <HintPath>..\packages\iosapp\Fabulous.LiveUpdate\lib\netstandard2.0\Fabulous.LiveUpdate.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="Fabulous.XamarinForms">
-          <HintPath>..\packages\iosapp\Fabulous.XamarinForms\lib\netstandard2.0\Fabulous.XamarinForms.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="Fabulous.XamarinForms.LiveUpdate">
-          <HintPath>..\packages\iosapp\Fabulous.XamarinForms.LiveUpdate\lib\netstandard2.0\Fabulous.XamarinForms.LiveUpdate.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="FSharp.Core">
-          <HintPath>..\packages\iosapp\FSharp.Core\lib\netstandard2.0\FSharp.Core.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="Newtonsoft.Json">
-          <HintPath>..\packages\iosapp\Newtonsoft.Json\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="UrhoSharp.Forms">
-          <HintPath>..\packages\iosapp\UrhoSharp.Forms\lib\Xamarin.iOS10\UrhoSharp.Forms.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="OpenTK-1.0">
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="System.Drawing.Common.dll">
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="Xamarin.Essentials">
-          <HintPath>..\packages\iosapp\Xamarin.Essentials\lib\xamarinios10\Xamarin.Essentials.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == 'Xamarin.iOS'">
-      <ItemGroup>
-        <Reference Include="Xamarin.Forms.Core">
-          <HintPath>..\packages\iosapp\Xamarin.Forms\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="Xamarin.Forms.Platform">
-          <HintPath>..\packages\iosapp\Xamarin.Forms\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="Xamarin.Forms.Xaml">
-          <HintPath>..\packages\iosapp\Xamarin.Forms\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Import Project="..\packages\iosapp\Xamarin.Forms\build\Xamarin.Forms.targets" Condition="Exists('..\packages\iosapp\Xamarin.Forms\build\Xamarin.Forms.targets')" />
-  <Import Project="..\packages\iosapp\UrhoSharp.Forms\build\$(__paket__UrhoSharp_Forms_targets).targets" Condition="Exists('..\packages\iosapp\UrhoSharp.Forms\build\$(__paket__UrhoSharp_Forms_targets).targets')" Label="Paket" />
+  <Import Project="..\packages\UrhoSharp.Forms.1.9.67\build\xamarin.ios10\UrhoSharp.Forms.targets" Condition="Exists('..\packages\UrhoSharp.Forms.1.9.67\build\xamarin.ios10\UrhoSharp.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\UrhoSharp.Forms.1.9.67\build\xamarin.ios10\UrhoSharp.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UrhoSharp.Forms.1.9.67\build\xamarin.ios10\UrhoSharp.Forms.targets'))" />
+  </Target>
 </Project>

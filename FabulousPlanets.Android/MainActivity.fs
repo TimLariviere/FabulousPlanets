@@ -1,4 +1,4 @@
-﻿// Copyright 2018 Elmish.XamarinForms contributors. See LICENSE.md for license.
+﻿// Copyright 2018 Fabulous contributors. See LICENSE.md for license.
 namespace FabulousPlanets.Android
 
 open System
@@ -12,10 +12,12 @@ open Android.Widget
 open Android.OS
 open Xamarin.Forms.Platform.Android
 
-[<Activity (Label = "FabulousPlanets", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
+[<Activity (Label = "FabulousPlanets.Android", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity() =
     inherit FormsAppCompatActivity()
     override this.OnCreate (bundle: Bundle) =
+        FormsAppCompatActivity.TabLayoutResource <- Resources.Layout.Tabbar
+        FormsAppCompatActivity.ToolbarResource <- Resources.Layout.Toolbar
         base.OnCreate (bundle)
 
         Xamarin.Essentials.Platform.Init(this, bundle)
