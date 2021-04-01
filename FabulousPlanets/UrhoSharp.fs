@@ -61,8 +61,11 @@ module UrhoSharpExtensions =
                 })
                 updateAsync |> Async.StartImmediate
 
-            let update registry (prevOpt: ViewElement voption) (source: ViewElement) (target: UrhoSurface) =
-                ViewBuilders.UpdateView (registry, prevOpt, source, target)
+            let update (prevOpt: ViewElement voption) (source: ViewElement) (target: UrhoSurface) =
+                ViewBuilders.UpdateView (prevOpt, source, target)
                 source.UpdatePrimitive(prevOpt, target, OptionsAttribKey, updateApplicationOptions)
+                
+            let updateAttachedProperties propertyKey prevOpt curr target =
+                ViewBuilders.UpdateViewAttachedProperties(propertyKey, prevOpt, curr, target)
 
-            ViewElement.Create(UrhoSurface, update, attribs)
+            ViewElement.Create(UrhoSurface, update, updateAttachedProperties, attribs)
